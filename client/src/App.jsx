@@ -7,12 +7,7 @@ import {Home} from './page/Home'
 
 function App() {
   const [count, setCount] = useState(0)
-  const dispatch = useDispatch()
-
-  useEffect(()=>{
-    dispatch()
-  },[])
-
+  
   return (
     <div>
      <Routes>
