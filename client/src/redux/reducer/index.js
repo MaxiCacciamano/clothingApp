@@ -7,16 +7,27 @@ import clothing from '../../../clothing.json'
 
 export default function rootReducer(state = initialState, action){
     console.log(action.payload,"aca esta el valor")
-    const womenCategory = clothing.catalog.clothing.categories.find(category => category.name === "Women");
-    const categoryName = womenCategory.categories.find(category => category.categories)
-    const perCategory = categoryName.categories.filter(prodNmae => prodNmae.categories)
-    const nameProd = perCategory.map(e=>e.categories.amount)
-    // const filterCategory = categoryName.categories.filter(e => e.name)
-    // const name = filterCategory.categories.map(e=>e.categories)
-    console.log(womenCategory,"women")
-    console.log(categoryName,"categories")
-    console.log(perCategory, "per Prdouct")
-    console.log(nameProd, "name prod")
+
+    const womenCategory = clothing.catalog.clothing.categories;
+
+    
+    // Recorremos todas las subcategorías en la categoría 'Women'
+    const productsNameAndPrices = womenCategory.forEach(category => {
+        // Dentro de cada subcategoría, si tiene productos, los extraemos
+        category.categories?.forEach(subCategory => {
+            // Aquí extraemos los productos (si los hay)
+            subCategory.categories?.forEach(product => ({
+                
+                    name: product.name, // nombre del producto
+                    amount: product.amount, // precio del producto
+                    currency: product.currency // moneda del producto
+            }));
+        });
+    });
+
+    console.log(womenCategory)
+    console.log(productsNameAndPrices, "Nombres y precios de los productos");
+
     switch(action.type){
         case 'GET_MEN':
             return{
