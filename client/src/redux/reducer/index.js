@@ -10,23 +10,22 @@ export default function rootReducer(state = initialState, action){
 
     const womenCategory = clothing.catalog.clothing.categories;
 
-    
-    // Recorremos todas las subcategorías en la categoría 'Women'
-    const productsNameAndPrices = womenCategory.forEach(category => {
-        // Dentro de cada subcategoría, si tiene productos, los extraemos
-        category.categories?.forEach(subCategory => {
+     // Recorremos todas las subcategorías en la categoría 'Women'
+    const productsNameAndPrices = womenCategory.map(category => {
+         // Dentro de cada subcategoría, si tiene productos, los extraemos
+         return category.categories?.map(subcategory=>{
             // Aquí extraemos los productos (si los hay)
-            subCategory.categories?.forEach(product => ({
-                
-                    name: product.name, // nombre del producto
-                    amount: product.amount, // precio del producto
-                    currency: product.currency // moneda del producto
-            }));
-        });
-    });
+            return subcategory.categories?.map(product=>({
+                name: product.name,
+                amount:product.amount,
+                currency: product.currency
+            }))
+         }).flat()// Usamos flat para aplanar el arreglo de subcategorías si hay múltiples subcategorías
+    }).flat() // Usamos flat para aplanar el arreglo de categorías si hay múltiples categorías
 
-    console.log(womenCategory)
-    console.log(productsNameAndPrices, "Nombres y precios de los productos");
+
+    console.log(womenCategory.flat())
+    console.log(productsNameAndPrices, "nombre y precio de los productos")
 
     switch(action.type){
         case 'GET_MEN':
@@ -37,7 +36,7 @@ export default function rootReducer(state = initialState, action){
         case 'GET_WOMEN':{
             return{
                 ...state,
-                women: action.payload
+                women: productsNameAndPrices
             }
         }
         default:
