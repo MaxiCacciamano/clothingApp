@@ -37,11 +37,15 @@ export function getWomen(){
 
 
             const clothingProducts = clothingwomen?.categories.flatMap((subcategory)=>
-             subcategory.categories?.map((product)=>({
-                name:product.name,
-                amount: product.amount,
-                currency: product.currency
-             })) || []
+             subcategory.categories?.map((product)=>{
+                if(product.amount && product.currency){
+                    return{
+                        name:product.name,
+                        amount: product.amount,
+                        currency: product.currency
+                    }
+                }
+             }) || []
             )
 
 
