@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Card } from './Card'
 import { getWomen } from '../redux/action'
 
+import style from '../design/getall.module.css'
+
 export const GetAll = () => {
     const dispatch = useDispatch()
     const  {women} = useSelector(state=>state)
@@ -13,7 +15,7 @@ export const GetAll = () => {
       }
     })
   return (
-    <div>
+    <div className={style.products}>
        {
         women.map(e=>(
             <Card key={e.name} name={e.name} amount={e.amount} currency={e.currency} />
