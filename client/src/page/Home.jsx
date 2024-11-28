@@ -5,7 +5,7 @@ export const Home = () => {
   return (
     <div>
       <h1>Soy el home</h1>
-      {/* <GetAll/> */}
+      <GetAll/>
     </div>
   )
 }
