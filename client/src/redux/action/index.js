@@ -82,11 +82,37 @@ export function getWomen(){
                        payload:allProducts
                    })
         })
+
         .catch(err => {
             console.log("Error fetching data", err)
         })
-    
         
         
+        
+    }
+}
+export function getAccesorios(){
+    return function(dispatch){
+        return axios
+        .get('../../../clothing.json')
+        .then((res)=>{
+            const accessories = res.data.catalog?.clothing
+
+            const categoryAccesories = accessories.categories.categories?.find('Accessories')
+
+            const accessoriProd = categoryAccesories.categories.map(
+                (prod )=> ({
+                    name: prod.name,
+                    amount: prod.amount,
+                    currency: prod.currency 
+
+                })
+            )
+            dispatch({
+                type:'GET_ACCESSORIES',
+                payload: accessoriProd
+            })
+        })
+        .catch(err=>console.log("Error al traer accesorios", err))
     }
 }

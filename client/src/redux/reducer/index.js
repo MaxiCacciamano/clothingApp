@@ -1,9 +1,8 @@
 const initialState ={
     men:[],
-    women:[]
+    women:[],
+    accessories:[]
 }
-
-import clothing from '../../../clothing.json'
 
 export default function rootReducer(state = initialState, action){
 
@@ -17,6 +16,12 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state,
                 women: action.payload
+            }
+        }
+        case 'GET_ACCESSORIES':{
+            return{
+                ...state,
+                accessories: action.payload
             }
         }
         default:
