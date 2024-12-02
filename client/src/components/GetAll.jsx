@@ -38,7 +38,7 @@ export const GetAll = () => {
        }
        </div>
        <h1>Shoes</h1>
-       <div>
+       <div  className={style.products}>
         {
           shoes.map((s)=>(
             <Card key={s.id} name={s.name} amount={s.amount}/>
