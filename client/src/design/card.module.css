@@ -1,0 +1,9 @@
+.product{
+    margin: 10px;
+    background-color:darkslategrey;
+    border-radius: 5px;
+    padding: 15px;
+}
+.product h2{
+    line-height: 1;
+}

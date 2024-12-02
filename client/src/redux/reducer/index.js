@@ -1,25 +1,33 @@
 const initialState ={
-    men:[],
-    women:[]
+    women:[],
+    getall:[],
+    accessories:[],
+    shoes:[]
 }
-
-import clothing from '../../../clothing.json'
+ 
 
 export default function rootReducer(state = initialState, action){
 
     switch(action.type){
-        case 'GET_MEN':
-            return{
-                ...state,
-                men: action.payload
-            }
         case 'GET_WOMEN':{
             return{
                 ...state,
                 women: action.payload
             }
         }
-        default:
+        case 'GET_ACCESSORIES':{
+            return{
+                ...state,
+                accessories: action.payload
+            }
+        }
+        case 'GET_SHOES':{
+            return{
+                ...state,
+                shoes: action.payload
+            }
+        }
+            default:
             return state
     }
 }
