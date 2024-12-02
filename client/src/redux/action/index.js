@@ -98,8 +98,10 @@ export function getAccesorios(){
         .then((res)=>{
             const accessories = res.data.catalog?.clothing
 
-            const categoryAccesories = accessories.categories.categories?.find('Accessories')
-
+            const categoryAccesories = accessories.categories.flatMap(subcat =>
+                subcat.categories.find(a => a.name === 'Accessories')
+            )
+            console.log(categoryAccesories,'ddd')
             const accessoriProd = categoryAccesories.categories.map(
                 (prod )=> ({
                     name: prod.name,
