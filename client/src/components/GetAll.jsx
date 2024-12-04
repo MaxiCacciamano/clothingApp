@@ -25,7 +25,7 @@ export const GetAll = () => {
     <div className={style.products}>
        {
         all.map((e, index)=>(
-          <Card key={`${e.name}-${index}`} name={e.name} amount={e.amount} />
+          <Card key={`${e.name}-${index}`} name={e.name} amount={e.amount} currency={e.currency}/>
         ))
        }
        </div>
@@ -33,7 +33,7 @@ export const GetAll = () => {
        <div className={style.products}>
       {
         accessories.map((a, index)=>(
-          <Card key={`${a.name}-${index}`} name={a.name} amount={a.amount}  />
+          <Card key={`${a.name}-${index}`} name={a.name} amount={a.amount}  currency={a.currency}/>
         ))
        }
        </div>
@@ -41,7 +41,7 @@ export const GetAll = () => {
        <div  className={style.products}>
         {
           shoes.map((s, index)=>(
-            <Card key={`${s.name}-${index}`} name={s.name} amount={s.amount}/>
+            <Card key={`${s.name}-${index}`} name={s.name} amount={s.amount} currency={s.currency}/>
           ))
         }
        </div>

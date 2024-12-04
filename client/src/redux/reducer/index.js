@@ -29,15 +29,17 @@ export default function rootReducer(state = initialState, action){
                 shoes: action.payload
             }
         }
-        case 'FILTER_WOMEN_CATEGORY':{
+        case 'FILTER_CATEGORY_CLOTHING':{
             let allCat = state.allCategory;   
             let categoriesFilter = action.payload
 
-            console.log(categoriesFilter, 'log para ver que valor tiene categoriesFilter');
+            // console.log(categoriesFilter, 'log para ver que valor tiene categoriesFilter');
 
-            console.log("subcategorias disp.",allCat.filter(item => item.subcategory === categoriesFilter))
+            // console.log("subcategorias disp.",allCat.filter(item => item.subcategory === categoriesFilter))
+            
 
-            let filteredCat = allCat.filter((e)=>
+            let filteredCat = categoriesFilter === 'All'? allCat:
+            allCat.filter((e)=>
                 categoriesFilter.toLowerCase() === e.subcategory.toLowerCase().trim()
             )
 
@@ -48,6 +50,20 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state,
                 women: filteredCat
+            }
+        }
+        case 'FILTER_CATEGORY_ACCESSORIES':{
+            let allShoes = state.shoes
+            let shoesFilter = action.payload
+
+            // let filteredShoes = shoesFilter === 'All'? allShoes:
+            // allShoes.filter((s)=>
+            //     shoesFilter.toLowerCase().trim() === s.
+            // )
+
+            return{
+                ...state,
+                women: action.payload
             }
         }
             default:

@@ -115,21 +115,31 @@ export function getShoes(){
         .then((res)=>{
             const clothing = res.data.catalog.clothing
 
-            const categoryShoes = clothing.categories.flatMap(s=>
-                s.categories?.find(pS =>pS.name === 'Shoes') 
+            console.log(clothing, "Clothing")
+
+            
+            const nameCategory = clothing.categories.filter((n)=>(n.name))
+            
+            console.log(nameCategory, "nameCategory")
+
+            const categoryShoes = nameCategory.flatMap((s)=>
+                s.categories?.find(pS =>pS.name === 'Shoes', )
+                
             )
 
-            // console.log(categoryShoes, "category Shoes")
+            console.log(categoryShoes, "category Shoes")
 
             const prodShows = categoryShoes.flatMap(subcategoryshoes =>
                 subcategoryshoes.categories?.flatMap((e)=>({
                     name: e?.name || 'Unknown',
+                    // catt: subcategoryshoes.name,
+                    cattt: subcategoryshoes.name,
                     amount: e?.amount || 0,
                     currency: e?.currency || 'USD',
                 }))
             ).filter(Boolean); // Filtra cualquier valor `undefined`
 
-            // console.log(prodShows, "Shoes")
+            console.log(prodShows, "Shoes")
             
             dispatch({
                 type: 'GET_SHOES',
@@ -145,7 +155,7 @@ export function getShoes(){
 export function filterCategories(payload){
     try{
         return{
-            type:'FILTER_WOMEN_CATEGORY',
+            type:'FILTER_CATEGORY_CLOTHING',
             payload
         }
     }
