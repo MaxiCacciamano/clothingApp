@@ -30,32 +30,36 @@ export function getWomen() {
 
                 // Extrae los productos de todas las subcategorías dentro de 'Women'
                 const ProductsWomen = clothingwomen?.categories.flatMap(
-                    (subcategory) => subcategory.categories?.flatMap((product) => ({
+                    (subcategory) => subcategory.categories?.map((product) => ({
                         name: product?.name,
+                        subcategory: subcategory.name,
                         amount: product?.amount,
                         currency: product?.currency
                     }))
                 )
 
                 const productsMen = menCategory?.categories.flatMap(
-                    (subcategoryMen)=> subcategoryMen.categories?.flatMap((productMen)=>({
+                    (subcategory)=> subcategory.categories?.map((productMen)=>({
                        name: productMen?.name,
+                       subcategory: subcategory.name,
                        amount: productMen?.amount,
                        currency: productMen?.currency 
                     }))
                 )
 
                 const girlsProducts =  girlsCategory?.categories.flatMap(
-                    (subcategoryGirls)=> subcategoryGirls.categories?.flatMap((productsGirls)=>({
+                    (subcategory)=> subcategory.categories?.map((productsGirls)=>({
                         name: productsGirls?.name,
+                        subcategory: subcategory?.name,
                         amount: productsGirls?.amount,
                         currency: productsGirls?.currency 
                     }))
                 )
 
                 const boysProducts =  boysCategory?.categories.flatMap(
-                    (subcategoryBoys)=> subcategoryBoys.categories?.flatMap((productsGirls)=>({
+                    (subcategory)=> subcategory.categories?.map((productsGirls)=>({
                         name: productsGirls?.name,
+                        subcategory: subcategory?.name,
                         amount: productsGirls?.amount,
                         currency: productsGirls?.currency 
                     }))
@@ -98,7 +102,7 @@ export function getAccesorios(){
                 type:'GET_ACCESSORIES',
                 payload: accessoriProd || []
             })
-            console.log(accessoriProd,'ddddddd')
+            // console.log(accessoriProd,'ddddddd')
         })
         .catch(err=>console.log("Error al traer accesorios", err))
     }
@@ -115,7 +119,7 @@ export function getShoes(){
                 s.categories?.find(pS =>pS.name === 'Shoes') 
             )
 
-            console.log(categoryShoes, "category Shoes")
+            // console.log(categoryShoes, "category Shoes")
 
             const prodShows = categoryShoes.flatMap(subcategoryshoes =>
                 subcategoryshoes.categories?.flatMap((e)=>({
@@ -125,7 +129,7 @@ export function getShoes(){
                 }))
             ).filter(Boolean); // Filtra cualquier valor `undefined`
 
-            console.log(prodShows, "Shoes")
+            // console.log(prodShows, "Shoes")
             
             dispatch({
                 type: 'GET_SHOES',

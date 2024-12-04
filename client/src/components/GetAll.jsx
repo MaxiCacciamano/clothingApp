@@ -32,16 +32,16 @@ export const GetAll = () => {
        <h1>Accesorios</h1>
        <div className={style.products}>
       {
-        accessories.map((a)=>(
-          <Card key={a.id} name={a.name} amount={a.amount}  />
+        accessories.map((a, index)=>(
+          <Card key={`${a.name}-${index}`} name={a.name} amount={a.amount}  />
         ))
        }
        </div>
        <h1>Shoes</h1>
        <div  className={style.products}>
         {
-          shoes.map((s)=>(
-            <Card key={s.id} name={s.name} amount={s.amount}/>
+          shoes.map((s, index)=>(
+            <Card key={`${s.name}-${index}`} name={s.name} amount={s.amount}/>
           ))
         }
        </div>

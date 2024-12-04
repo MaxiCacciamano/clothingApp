@@ -7,6 +7,7 @@ export const Filter = () => {
 
 
     function handleFilterCategory(e){
+        e.preventDefault();
         dispatch(filterCategories(e.target.value))
     }
   return (
@@ -17,7 +18,8 @@ export const Filter = () => {
             <option value="Dresses">Dresses</option>
             <option value="Tops">Tops</option>
             <option value="Pants">Pants</option>
-            <option value="Skirts">Skirts</option>
+            {/* <option value="Skirts">Skirts</option> */}
+            <option value="Shorts">Shorts</option>
         </select>
     </div>
   )

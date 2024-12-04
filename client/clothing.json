@@ -88,7 +88,8 @@
           {"name":"Accessories", "categories": [
                 {"name": "Necklace", "amount": 26.99, "currency": "USD"},
                 {"name": "Gloves", "amount": 7.99, "currency": "USD"},
-                {"name": "Beanie", "amount": 12.99, "currency": "USD"}
+                {"name": "Beanie", "amount": 12.99, "currency": "USD"},
+                {"name": "Gloves", "amount": 7.99, "currency": "USD"}
           ]},
           {"name":"Shoes", "categories": [
                 {"name": "Sport Shoes", "amount": 39.99, "currency": "USD"},
@@ -116,7 +117,9 @@
           {"name":"Accessories", "categories": [
                   {"name": "Sunglasses", "amount": 36.99, "currency": "USD"},
                   {"name": "Beanie", "amount": 17.99, "currency": "USD"},
-                  {"name": "Scarf", "amount": 15.99, "currency": "USD"}
+                  {"name": "Scarf", "amount": 15.99, "currency": "USD"},
+                  {"name": "Sunglasses", "amount": 36.99, "currency": "USD"},
+                  {"name": "Sunglasses", "amount": 36.99, "currency": "USD"}
           ]},
           {"name":"Shoes", "categories": [
                   {"name": "Sneaker", "amount": 89.99, "currency": "USD"},

@@ -1,7 +1,10 @@
 import React from 'react'
+import { Filter } from './Filter'
 
 export const Nav = () => {
   return (
-    <div>Nav</div>
+    <div>
+      <Filter />
+    </div>
   )
 }
