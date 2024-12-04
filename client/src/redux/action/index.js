@@ -88,6 +88,7 @@ export function getAccesorios(){
             const categoryAccesories = accessories.categories.flatMap(subcat =>
                 subcat.categories?.find((a) => a.name === 'Accessories')
             )
+
             const accessoriProd = categoryAccesories?.flatMap(product =>
                 product?.categories?.map((productos)=>({
                     name: productos?.name || 'Unknown',
@@ -113,41 +114,48 @@ export function getShoes(){
         return axios
         .get('../../../clothing.json')
         .then((res)=>{
-            const clothing = res.data.catalog.clothing
+            const clothing = res.data.catalog.clothing;
 
-            console.log(clothing, "Clothing")
+            // Filtrar las categorías principales (Women, Men, Girls, Boys)
+            const categories = ['Women', 'Men', 'Girls', 'Boys'];
 
-            
-            const nameCategory = clothing.categories.filter((n)=>(n.name))
-            
-            console.log(nameCategory, "nameCategory")
+            const shoesByCategory = categories.map((categoryName) => {
+                const mainCategory = clothing.categories.find(
+                    (cat) => cat.name === categoryName
+                );
 
-            const categoryShoes = nameCategory.flatMap((s)=>
-                s.categories?.find(pS =>pS.name === 'Shoes', )
-                
-            )
+                // console.log(mainCategory, "mainCategory")
+                // Extraer subcategoría "Shoes" dentro de cada categoría principal
+                const shoesCategory = mainCategory?.categories?.find(
+                    (subCat) => subCat.name === 'Shoes'
+                );
 
-            console.log(categoryShoes, "category Shoes")
+                // console.log(shoesCategory,"shoesCategory")
 
-            const prodShows = categoryShoes.flatMap(subcategoryshoes =>
-                subcategoryshoes.categories?.flatMap((e)=>({
-                    name: e?.name || 'Unknown',
-                    // catt: subcategoryshoes.name,
-                    cattt: subcategoryshoes.name,
-                    amount: e?.amount || 0,
-                    currency: e?.currency || 'USD',
-                }))
-            ).filter(Boolean); // Filtra cualquier valor `undefined`
+                // Extraer los productos dentro de la categoría "Shoes"
+                const products = shoesCategory?.categories?.map((product) => ({
+                    name: product?.name || 'Unknown',
+                    amount: product?.amount || 0,
+                    currency: product?.currency || 'USD',
+                    category: categoryName,
+                }));
 
-            console.log(prodShows, "Shoes")
-            
+                return products || [];
+            });
+
+            // console.log(shoesByCategory,"shoesByCategory")
+
+            // Combinar todos los productos de zapatos en un solo array
+            const allShoes = shoesByCategory.flat();
+
+            // Enviar al store los zapatos agrupados por categoría
             dispatch({
                 type: 'GET_SHOES',
-                payload: prodShows
-            })
-        }
+                payload: allShoes,
+            });
 
-        )
+            // console.log(allShoes, "Filtered Shoes by Category");
+        })
         .catch(err=>console.log(err, "Error al traer Shoe"))
     }
 

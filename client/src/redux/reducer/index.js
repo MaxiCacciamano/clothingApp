@@ -52,20 +52,6 @@ export default function rootReducer(state = initialState, action){
                 women: filteredCat
             }
         }
-        case 'FILTER_CATEGORY_ACCESSORIES':{
-            let allShoes = state.shoes
-            let shoesFilter = action.payload
-
-            // let filteredShoes = shoesFilter === 'All'? allShoes:
-            // allShoes.filter((s)=>
-            //     shoesFilter.toLowerCase().trim() === s.
-            // )
-
-            return{
-                ...state,
-                women: action.payload
-            }
-        }
             default:
             return state
     }
