@@ -30,21 +30,23 @@ export default function rootReducer(state = initialState, action){
             }
         }
         case 'FILTER_WOMEN_CATEGORY':{
-            let allCat = state.women;
+            let allCat = state.allCategory;   
             let categoriesFilter = action.payload
 
+            console.log(categoriesFilter, 'log para ver que valor tiene categoriesFilter');
+
+            console.log("subcategorias disp.",allCat.filter(item => item.subcategory === categoriesFilter))
 
             let filteredCat = allCat.filter((e)=>
-                e.subcategory === categoriesFilter
+                categoriesFilter.toLowerCase() === e.subcategory.toLowerCase().trim()
             )
 
-
-            console.log(filteredCat, 'Filtered Clothing by Category');
-            console.log(categoriesFilter, 'Selected Category');
+            // console.log(allCat,"ss")
+            // console.log(filteredCat, 'Filtered Clothing by Category');
+            console.log("--------------------------------------------------------- abajo comienza otro pedido")
             
             return{
                 ...state,
-                allCategory: filteredCat,
                 women: filteredCat
             }
         }

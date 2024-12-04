@@ -50,7 +50,7 @@ export function getWomen() {
                 const girlsProducts =  girlsCategory?.categories.flatMap(
                     (subcategory)=> subcategory.categories?.map((productsGirls)=>({
                         name: productsGirls?.name,
-                        subcategory: subcategory?.name,
+                        subcategory: subcategory.name,
                         amount: productsGirls?.amount,
                         currency: productsGirls?.currency 
                     }))
@@ -59,14 +59,14 @@ export function getWomen() {
                 const boysProducts =  boysCategory?.categories.flatMap(
                     (subcategory)=> subcategory.categories?.map((productsGirls)=>({
                         name: productsGirls?.name,
-                        subcategory: subcategory?.name,
+                        subcategory: subcategory.name,
                         amount: productsGirls?.amount,
                         currency: productsGirls?.currency 
                     }))
                 )
 
                 const allProd = [...ProductsWomen, ...productsMen, ...girlsProducts, ...boysProducts]
-                console.log(allProd)
+                // console.log(allProd)
                 dispatch({
                     type: 'GET_WOMEN',
                     payload: allProd

@@ -8,6 +8,8 @@ export const Filter = () => {
 
     function handleFilterCategory(e){
         e.preventDefault();
+        const selectedCategory = e.target.value
+        console.log(selectedCategory, "e.target.value")
         dispatch(filterCategories(e.target.value))
     }
   return (
