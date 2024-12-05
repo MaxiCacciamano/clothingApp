@@ -4,12 +4,12 @@ import { Card } from './Card'
 import { getWomen, getAccesorios, getShoes } from '../redux/action'
 
 import style from '../design/getall.module.css'
+import { Shoes } from './Shoes'
 
 export const GetAll = () => {
     const dispatch = useDispatch()
     const all = useSelector(state=>state.women)
     const {accessories} = useSelector(state => state)
-    const {shoes} = useSelector(state=>state)
 
 
     useEffect(()=>{
@@ -17,7 +17,6 @@ export const GetAll = () => {
         dispatch(getWomen('your-category-api-endpoint')) // Replace with the correct endpoint if necessary
       }
         dispatch(getAccesorios())
-        dispatch(getShoes())
     },[])
   return (
     <div>
@@ -38,13 +37,7 @@ export const GetAll = () => {
        }
        </div>
        <h1>Shoes</h1>
-       <div  className={style.products}>
-        {
-          shoes.map((s, index)=>(
-            <Card key={`${s.name}-${index}`} name={s.name} amount={s.amount} currency={s.currency}/>
-          ))
-        }
-       </div>
+       <Shoes />
 
     </div>
   )
