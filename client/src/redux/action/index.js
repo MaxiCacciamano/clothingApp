@@ -56,7 +56,7 @@ export function getWomen() {
                     }))
                 )
 
-                const boysProducts =  boysCategory?.categories.flatMap(
+             const boysProducts =  boysCategory?.categories.flatMap(
                     (subcategory)=> subcategory.categories?.map((productsGirls)=>({
                         name: productsGirls?.name,
                         subcategory: subcategory.name,
@@ -175,12 +175,25 @@ export function filterCategories(payload){
 export function searchByName(payload){
     return async function(dispatch){
         try{
-            const filterCloting = allProd.filter(item=>
-                item.name.toLowerCase().includes(payload.toLowerCase())
-            )
+            // const filterCloting = allProd.filter(item=>
+            //     item.name.toLowerCase().includes(payload.toLowerCase())
+            // )
+            dispatch({
+                type:'FILTER_CLOTHING',
+                payload: 
+            })
         }
         catch(err){
             console.log(err, "Error, algo salio mal en seach by name")
         }
+    }
+}
+
+export function getByName(payload){
+    try{
+
+    }
+    catch(err){
+        console.log(err, 'error en el getById')
     }
 }
