@@ -65,7 +65,7 @@ export function getWomen() {
                     }))
                 )
 
-                const allProd = [...ProductsWomen, ...productsMen, ...girlsProducts, ...boysProducts]
+                var allProd = [...ProductsWomen, ...productsMen, ...girlsProducts, ...boysProducts]
                 // console.log(allProd)
                 dispatch({
                     type: 'GET_WOMEN',
@@ -169,5 +169,18 @@ export function filterCategories(payload){
     }
     catch(err){
         console.log("Error, algo salio mal", err)
+    }
+}
+
+export function searchByName(payload){
+    return async function(dispatch){
+        try{
+            const filterCloting = allProd.filter(item=>
+                item.name.toLowerCase().includes(payload.toLowerCase())
+            )
+        }
+        catch(err){
+            console.log(err, "Error, algo salio mal en seach by name")
+        }
     }
 }
