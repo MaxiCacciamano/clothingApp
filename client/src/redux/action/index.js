@@ -1,82 +1,128 @@
 import axios from 'axios';
 
+function extractProducts(category){
+    return category?.categories.flatMap((subcategory)=>
+     subcategory.categories?.map((product)=>({
+        name: product?.name,
+        subcategory: subcategory.name,
+        amount: product?.amount,
+        currency: product?.currency,
+     }))
+    )
+}
+
+export async function products(){
+    try{
+        const res = await axios.get('../../../clothing.json')
+
+        const clothing = res.data.catalog.clothing;
+
+        //buscamos las categorias
+        const categories = ['Women','Men','Girls', 'Boys']
+
+        const allProducts = categories.flatMap((categoryName)=>{
+            const category = clothing.categories?.find(
+                (category) => category.name === categoryName
+            );
+            if(category){
+                // Find 'Clothing' subcategory and extract products
+                const subcategory = category.categories?.find(
+                (subcategory) => subcategory.name === 'Clothing'
+                );
+                return extractProducts(subcategory)
+            }
+            return [];
+        })
+        return allProducts   
+}
+    catch(err){
+        console.log(err, "Error en la funcion de productos")
+    }
+}
+// export function getpProducts(){
+//     return axios
+//     .get('../../../clothing.json') //Fetch
+//     .then((res) => {
+//         const clothing = res.data.catalog.clothing;
+//         // Assuming the response contains the necessary catalog structure:
+//         const womenCategory = clothing.categories?.find(
+//             (category) => category.name === 'Women'
+//         );
+
+//         const menCategory = clothing.categories
+//         ?.find((category) => category.name === 'Men')
+//         ?.categories.find(subcategory => subcategory.name === 'Clothing')
+
+//         const girlsCategory = clothing.categories
+//         ?.find((category)=> category.name === 'Girls')
+//         ?.categories.find(subcategory=> subcategory.name === 'Clothing')
+
+
+//         const boysCategory = clothing.categories
+//         ?.find((category)=> category.name === 'Boys')
+//         ?.categories.find(subcategory=> subcategory.name === 'Clothing')
+
+//         const clothingwomen = womenCategory?.categories.find(
+//             (subcategory) => subcategory.name === 'Clothing'
+//         );
+
+//         // Extrae los productos de todas las subcategorías dentro de 'Women'
+//         const ProductsWomen = clothingwomen?.categories.flatMap(
+//             (subcategory) => subcategory.categories?.map((product) => ({
+//                 name: product?.name,
+//                 subcategory: subcategory.name,
+//                 amount: product?.amount,
+//                 currency: product?.currency
+//             }))
+//         )
+
+//         const productsMen = menCategory?.categories.flatMap(
+//             (subcategory)=> subcategory.categories?.map((productMen)=>({
+//                name: productMen?.name,
+//                subcategory: subcategory.name,
+//                amount: productMen?.amount,
+//                currency: productMen?.currency 
+//             }))
+//         )
+
+//         const girlsProducts =  girlsCategory?.categories.flatMap(
+//             (subcategory)=> subcategory.categories?.map((productsGirls)=>({
+//                 name: productsGirls?.name,
+//                 subcategory: subcategory.name,
+//                 amount: productsGirls?.amount,
+//                 currency: productsGirls?.currency 
+//             }))
+//         )
+
+//      const boysProducts =  boysCategory?.categories.flatMap(
+//             (subcategory)=> subcategory.categories?.map((productsGirls)=>({
+//                 name: productsGirls?.name,
+//                 subcategory: subcategory.name,
+//                 amount: productsGirls?.amount,
+//                 currency: productsGirls?.currency 
+//             }))
+//         )
+
+//         var allProd = [...ProductsWomen, ...productsMen, ...girlsProducts, ...boysProducts]
+//         return allProd
+// })
+// }
+
 export function getWomen() {
-    return function (dispatch) {
-        return axios
-            .get('../../../clothing.json') //Fetch
-            .then((res) => {
-                const clothing = res.data.catalog.clothing;
-                // Assuming the response contains the necessary catalog structure:
-                const womenCategory = clothing.categories?.find(
-                    (category) => category.name === 'Women'
-                );
-
-                const menCategory = clothing.categories
-                ?.find((category) => category.name === 'Men')
-                ?.categories.find(subcategory => subcategory.name === 'Clothing')
-
-                const girlsCategory = clothing.categories
-                ?.find((category)=> category.name === 'Girls')
-                ?.categories.find(subcategory=> subcategory.name === 'Clothing')
-
-
-                const boysCategory = clothing.categories
-                ?.find((category)=> category.name === 'Boys')
-                ?.categories.find(subcategory=> subcategory.name === 'Clothing')
-
-                const clothingwomen = womenCategory?.categories.find(
-                    (subcategory) => subcategory.name === 'Clothing'
-                );
-
-                // Extrae los productos de todas las subcategorías dentro de 'Women'
-                const ProductsWomen = clothingwomen?.categories.flatMap(
-                    (subcategory) => subcategory.categories?.map((product) => ({
-                        name: product?.name,
-                        subcategory: subcategory.name,
-                        amount: product?.amount,
-                        currency: product?.currency
-                    }))
-                )
-
-                const productsMen = menCategory?.categories.flatMap(
-                    (subcategory)=> subcategory.categories?.map((productMen)=>({
-                       name: productMen?.name,
-                       subcategory: subcategory.name,
-                       amount: productMen?.amount,
-                       currency: productMen?.currency 
-                    }))
-                )
-
-                const girlsProducts =  girlsCategory?.categories.flatMap(
-                    (subcategory)=> subcategory.categories?.map((productsGirls)=>({
-                        name: productsGirls?.name,
-                        subcategory: subcategory.name,
-                        amount: productsGirls?.amount,
-                        currency: productsGirls?.currency 
-                    }))
-                )
-
-             const boysProducts =  boysCategory?.categories.flatMap(
-                    (subcategory)=> subcategory.categories?.map((productsGirls)=>({
-                        name: productsGirls?.name,
-                        subcategory: subcategory.name,
-                        amount: productsGirls?.amount,
-                        currency: productsGirls?.currency 
-                    }))
-                )
-
-                var allProd = [...ProductsWomen, ...productsMen, ...girlsProducts, ...boysProducts]
-                // console.log(allProd)
+    return async function (dispatch) {
+            try{
+                const allProd = await products();
                 dispatch({
                     type: 'GET_WOMEN',
                     payload: allProd
                 })
-            })
-            .catch(err => {
-                console.log("Error fetching data", err)
-            })
+            }
+            catch (err){
+                console.log(err, 'error al traer productos')
+            }
     }
-}
+    }
+
 
 export function getAccesorios(){
     return function(dispatch){
@@ -180,7 +226,7 @@ export function searchByName(payload){
             // )
             dispatch({
                 type:'FILTER_CLOTHING',
-                payload: 
+                payload
             })
         }
         catch(err){
