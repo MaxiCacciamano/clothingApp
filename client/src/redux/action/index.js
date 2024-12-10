@@ -39,76 +39,8 @@ export async function products(){
         console.log(err, "Error en la funcion de productos")
     }
 }
-// export function getpProducts(){
-//     return axios
-//     .get('../../../clothing.json') //Fetch
-//     .then((res) => {
-//         const clothing = res.data.catalog.clothing;
-//         // Assuming the response contains the necessary catalog structure:
-//         const womenCategory = clothing.categories?.find(
-//             (category) => category.name === 'Women'
-//         );
 
-//         const menCategory = clothing.categories
-//         ?.find((category) => category.name === 'Men')
-//         ?.categories.find(subcategory => subcategory.name === 'Clothing')
-
-//         const girlsCategory = clothing.categories
-//         ?.find((category)=> category.name === 'Girls')
-//         ?.categories.find(subcategory=> subcategory.name === 'Clothing')
-
-
-//         const boysCategory = clothing.categories
-//         ?.find((category)=> category.name === 'Boys')
-//         ?.categories.find(subcategory=> subcategory.name === 'Clothing')
-
-//         const clothingwomen = womenCategory?.categories.find(
-//             (subcategory) => subcategory.name === 'Clothing'
-//         );
-
-//         // Extrae los productos de todas las subcategorías dentro de 'Women'
-//         const ProductsWomen = clothingwomen?.categories.flatMap(
-//             (subcategory) => subcategory.categories?.map((product) => ({
-//                 name: product?.name,
-//                 subcategory: subcategory.name,
-//                 amount: product?.amount,
-//                 currency: product?.currency
-//             }))
-//         )
-
-//         const productsMen = menCategory?.categories.flatMap(
-//             (subcategory)=> subcategory.categories?.map((productMen)=>({
-//                name: productMen?.name,
-//                subcategory: subcategory.name,
-//                amount: productMen?.amount,
-//                currency: productMen?.currency 
-//             }))
-//         )
-
-//         const girlsProducts =  girlsCategory?.categories.flatMap(
-//             (subcategory)=> subcategory.categories?.map((productsGirls)=>({
-//                 name: productsGirls?.name,
-//                 subcategory: subcategory.name,
-//                 amount: productsGirls?.amount,
-//                 currency: productsGirls?.currency 
-//             }))
-//         )
-
-//      const boysProducts =  boysCategory?.categories.flatMap(
-//             (subcategory)=> subcategory.categories?.map((productsGirls)=>({
-//                 name: productsGirls?.name,
-//                 subcategory: subcategory.name,
-//                 amount: productsGirls?.amount,
-//                 currency: productsGirls?.currency 
-//             }))
-//         )
-
-//         var allProd = [...ProductsWomen, ...productsMen, ...girlsProducts, ...boysProducts]
-//         return allProd
-// })
-// }
-
-export function getWomen() {
+export  function getWomen() {
     return async function (dispatch) {
             try{
                 const allProd = await products();
@@ -122,6 +54,14 @@ export function getWomen() {
             }
     }
     }
+
+
+export function getError(){
+    return {
+        type: 'GET_ERROR',
+        payload: 'Error al buscar producto por nombre'
+    }
+}
 
 
 export function getAccesorios(){
@@ -221,25 +161,38 @@ export function filterCategories(payload){
 export function searchByName(payload){
     return async function(dispatch){
         try{
-            // const filterCloting = allProd.filter(item=>
-            //     item.name.toLowerCase().includes(payload.toLowerCase())
-            // )
+            const productss = await products()
+            const productName = productss.find(n => n.name === payload) 
+            console.log(productName,"sss")
+
+            if (!productName) {
+                throw new Error(`No se encontró un producto con el nombre: ${payload}`);
+            }
             dispatch({
-                type:'FILTER_CLOTHING',
-                payload
+                type:'GET_BY_NAME',
+                payload: productName
             })
         }
         catch(err){
             console.log(err, "Error, algo salio mal en seach by name")
+            dispatch({
+                type:'GET_BY_NAME_ERROR',
+                payload: err.message
+            })
         }
     }
 }
 
-export function getByName(payload){
-    try{
-
-    }
-    catch(err){
-        console.log(err, 'error en el getById')
+export function filterClothing(payload){
+    return function(dispatch){
+        try{
+            dispatch({
+                type:'FILTER_CATEGORY_CLOTHING',
+                payload
+            })
+        }
+        catch(err){
+            console.log(err, 'error en el getById')
+        }
     }
 }

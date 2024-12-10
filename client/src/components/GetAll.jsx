@@ -18,6 +18,8 @@ export const GetAll = () => {
       }
         dispatch(getAccesorios())
     },[])
+
+    // console.log(all)
   return (
     <div>
       <h1>Products</h1>
@@ -35,6 +37,7 @@ export const GetAll = () => {
           <Card key={`${a.name}-${index}`} name={a.name} amount={a.amount}  currency={a.currency}/>
         ))
        }
+       
        </div>
        <h1>Shoes</h1>
        <Shoes />

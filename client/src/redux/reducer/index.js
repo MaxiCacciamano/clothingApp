@@ -1,9 +1,11 @@
 const initialState ={
     women:[],
+    productsearch:[],
     getall:[],
     accessories:[],
     shoes:[],
-    allCategory:[]
+    allCategory:[],
+    error:[]
 }
  
 
@@ -29,6 +31,19 @@ export default function rootReducer(state = initialState, action){
                 shoes: action.payload
             }
         }
+        case 'GET_BY_NAME':{
+            return{
+                ...state,
+                productsearch: action.payload
+
+            }
+        }
+        case 'GET_ERROR':{
+            return{
+                ...state,
+                error: action.payload
+            }
+        }
         case 'FILTER_CATEGORY_CLOTHING':{
             let allCat = state.allCategory;   
             let categoriesFilter = action.payload
@@ -40,7 +55,7 @@ export default function rootReducer(state = initialState, action){
 
             let filteredCat = categoriesFilter === 'All'? allCat:
             allCat.filter((e)=>
-                categoriesFilter.toLowerCase() === e.subcategory.toLowerCase().trim()
+                categoriesFilter.toLowerCase().trim() === e.subcategory.toLowerCase().trim()
             )
 
             // console.log(allCat,"ss")
