@@ -54,7 +54,7 @@ export const SearchName = () => {
 
           searchProduct ? (
             <div>
-              <h3>Producto encontrado</h3>
+              {/* <h3>Producto encontrado</h3> */}
               <p>{searchProduct.name} </p>
             </div>
           ): error ? (
@@ -62,7 +62,7 @@ export const SearchName = () => {
                     <p style={{ color: 'red' }}>{error}</p>
                 </div>
           ):(
-            <p>Introduce un nombre para buscar un producto.</p>
+            <p>Introduce un nombre para buscar un producto.</p> 
           )
             }
 
