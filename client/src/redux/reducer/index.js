@@ -16,7 +16,7 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state,
                 women: action.payload,
-                allCategory: action.payload
+                allCategory: action.payload,
             }
         }
         case 'GET_ACCESSORIES':{
@@ -34,7 +34,7 @@ export default function rootReducer(state = initialState, action){
         case 'GET_BY_NAME':{
             return{
                 ...state,
-                productsearch: action.payload
+                women: action.payload
 
             }
         }

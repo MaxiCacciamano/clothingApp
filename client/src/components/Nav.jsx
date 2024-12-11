@@ -8,7 +8,7 @@ export const Nav = () => {
   return (
     <div className={style.contain}>
       <Filter />
-      <SearchName/>
+      {/* <SearchName/> */}
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { products, searchByName } from '../redux/action'
 
 export const SearchName = () => {
   const dispatch = useDispatch()
-  const searchProduct = useSelector(state=>state.productsearch)
+  const searchProduct = useSelector(state=>state.women)
   const error = useSelector(state => state.error);
   const [name, setName] = useState(null)
   const [showRsult, setShowresult] = useState(false)
@@ -55,7 +55,7 @@ export const SearchName = () => {
           searchProduct ? (
             <div>
               <h3>Producto encontrado</h3>
-              <p>Nombre: {searchProduct.name} </p>
+              <p>{searchProduct.name} </p>
             </div>
           ): error ? (
                 <div>

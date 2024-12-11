@@ -89,7 +89,7 @@ export function getAccesorios(){
                 type:'GET_ACCESSORIES',
                 payload: accessoriProd || []
             })
-            // console.log(accessoriProd,'ddddddd')
+            console.log(accessoriProd,'ddddddd')
         })
         .catch(err=>console.log("Error al traer accesorios", err))
     }
@@ -162,7 +162,7 @@ export function searchByName(payload){
     return async function(dispatch){
         try{
             const productss = await products()
-            const productName = productss.find(n => n.name === payload) 
+            const productName = productss.filter(n => n.name.toLowerCase().includes(payload.toLowerCase())) 
             console.log(productName,"sss")
 
             if (!productName) {
