@@ -27,7 +27,6 @@ export const GetAll = () => {
     // console.log(all)
   return (
     <div>
-    <SearchName/>
     {
           showRsult  &&(
             <div>

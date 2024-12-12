@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { products, searchByName } from '../redux/action'
 
+import lupa from '../../public/IMG/Lupa.png'
+
 export const SearchName = () => {
   const dispatch = useDispatch()
   const searchProduct = useSelector(state=>state.women)
@@ -41,8 +43,8 @@ export const SearchName = () => {
         value={name}
         onChange={e=>handleInput(e)}
         />
-        <button type='submit' onClick={e=>handleSearch(e)}>
-        🔍
+        <button type='submit' onClick={e=>handleSearch(e)} style={{backgroundColor:'white'}}>
+         <img src= {lupa} />
         </button>
 
 
