@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { filterCategories, getShoes } from '../redux/action'
 
 
-export const Filter = () => {
+export const Filtercategory = () => {
     const dispatch = useDispatch()
     function handleFilterCategory(e){
         e.preventDefault();

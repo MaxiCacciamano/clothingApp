@@ -1,5 +1,5 @@
 import React from 'react'
-import { Filter } from './Filter'
+import { Filters } from './Filters'
 
 import style from '../design/nav.module.css'
 import { SearchName } from './SearchName'
@@ -24,7 +24,7 @@ export const Nav = () => {
       <SearchName/>
       </div>
       <div>
-      <Filter />
+      <Filters />
 
       </div>
      </div>

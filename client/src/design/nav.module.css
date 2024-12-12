@@ -8,14 +8,16 @@
     flex-direction:row;
     align-items: center;
     align-content: center;
+    justify-content: space-between;
 }
-.Frame556 h1{
-    
+.Frame556 h2{
+    margin-right: 130px;
 }
 .Frame556 .menu ul{
     display: flex;
     gap: 30px;
     flex-direction: row;
+    margin-right: 30px;
 }
 
 .Frame556 .menu li{
@@ -41,7 +43,7 @@
     background-color: #F5F5F5;
     border: none;
     padding: 10px;
-    font-weight: bold;
+    font-weight:400;
 }
 
 .search button{
