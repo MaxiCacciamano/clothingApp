@@ -4,6 +4,8 @@ import { products, searchByName } from '../redux/action'
 
 import lupa from '../../public/IMG/Lupa.png'
 
+import style from '../design/nav.module.css'
+
 export const SearchName = () => {
   const dispatch = useDispatch()
   const searchProduct = useSelector(state=>state.women)
@@ -36,14 +38,14 @@ export const SearchName = () => {
 
 
   return (
-    <div>
+    <div className= {style.search} >
       <form onSubmit={(e)=>handleSubmit(e)}>
         <input
-        placeholder="Search Name"
+        placeholder="What are you looking for?"
         value={name}
         onChange={e=>handleInput(e)}
         />
-        <button type='submit' onClick={e=>handleSearch(e)} style={{backgroundColor:'white'}}>
+        <button type='submit' onClick={e=>handleSearch(e)}>
          <img src= {lupa} />
         </button>
 

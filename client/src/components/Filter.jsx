@@ -14,7 +14,7 @@ export const Filter = () => {
   return (
     <div>
       <div style={{display:'flex', flexDirection:'row'}}>
-        <h2>Category</h2>
+        {/* <h2>Category</h2> */}
         <select name='category' onChange={e => handleFilterCategory(e)}>
             <option value="All">All</option>
             <option value="Dresses">Dresses</option>

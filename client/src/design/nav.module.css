@@ -10,7 +10,7 @@
     align-content: center;
 }
 .Frame556 h1{
-
+    
 }
 .Frame556 .menu ul{
     display: flex;
@@ -30,4 +30,20 @@
     flex-direction:row;
     align-items: center;
     align-content: center;
+}
+
+.search{
+    background-color: #F5F5F5;
+    border-radius: 5px;
+}
+
+.search input{
+    background-color: #F5F5F5;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.search button{
+    background-color: #F5F5F5;
 }
