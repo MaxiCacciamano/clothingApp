@@ -4,7 +4,7 @@ import { getWomen } from '../redux/action';
 
 import style from '../design/card.module.css'
 
-export const Card = ({name, amount, currency}) => {
+export const Card = ({name, amount, currency, image}) => {
 
   // useEffect(()=>{
   //   // Fetch data when component mounts
@@ -14,6 +14,7 @@ export const Card = ({name, amount, currency}) => {
     <div className={style.product}>
       <h2> {name} </h2>
       <h2>{currency} {amount}</h2>
+      <img src={image} />
     </div>
   )
 }

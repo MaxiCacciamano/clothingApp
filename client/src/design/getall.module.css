@@ -5,3 +5,8 @@
 .products h1{
     /* text-align: center; */
 }
+
+.products img{
+    width: 30%;
+    border-radius: 5%;
+}

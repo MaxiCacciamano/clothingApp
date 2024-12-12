@@ -67,6 +67,12 @@ export default function rootReducer(state = initialState, action){
                 women: filteredCat
             }
         }
+        case 'FILTER_PRICE':{
+            return{
+                ...state,
+                
+            }
+        }
             default:
             return state
     }

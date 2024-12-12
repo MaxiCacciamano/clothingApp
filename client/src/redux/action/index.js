@@ -7,6 +7,7 @@ function extractProducts(category){
         subcategory: subcategory.name,
         amount: product?.amount,
         currency: product?.currency,
+        image: product?.image
      }))
     )
 }
