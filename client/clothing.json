@@ -117,7 +117,7 @@
           {"name":"Accessories", "categories": [
                   {"name": "Sunglasses", "amount": 36.99, "currency": "USD"},
                   {"name": "Beanie", "amount": 17.99, "currency": "USD"},
-                  {"name": "Scarf", "amount": 15.99, "currency": "USD"},
+                  {"name": "Scarf", "amount": 15.99, "currency": "USD"},  
                   {"name": "Sunglasses", "amount": 36.99, "currency": "USD"},
                   {"name": "Sunglasses", "amount": 36.99, "currency": "USD"}
           ]},
