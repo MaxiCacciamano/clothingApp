@@ -20,9 +20,9 @@ export const Nav = () => {
     </div>
      <div className={style.menu}>
        <ul>
-         <li>Home</li>
-         <li>Collection</li>
-         <li>New</li>
+         <li><p>Home</p></li>
+         <li><p>Collection</p></li>
+         <li><p>New</p></li>
        </ul>
      </div>
      </div>
