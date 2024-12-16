@@ -8,10 +8,6 @@
     flex-direction:row;
     align-items: center;
     align-content: center;
-    justify-content: space-between;
-}
-.Frame556 h2{
-    margin-right: 130px;
 }
 .Frame556 .menu ul{
     display: flex;
@@ -20,12 +16,17 @@
     margin-right: 30px;
 }
 
+.log{
+    align-content: center;
+}
+
 .Frame556 .menu li{
     list-style: none;
     margin: 0;
     padding: 0;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .Frame552{
     display: flex;

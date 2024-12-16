@@ -6,6 +6,7 @@ import { getWomen, getAccesorios, getShoes } from '../redux/action'
 import style from '../design/getall.module.css'
 import { Shoes } from './Shoes'
 import { SearchName } from './SearchName'
+import { Filters } from './Filters'
 
 export const GetAll = () => {
     const dispatch = useDispatch()
@@ -68,6 +69,8 @@ export const GetAll = () => {
        </div>
        <h1>Shoes</h1>
        <Shoes />
+
+       <Filters />
 
     </div>
   )
