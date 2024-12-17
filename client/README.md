@@ -6,3 +6,7 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+https://www.figma.com/design/XflCZZyosJl341GPe6aEib/Cloth-Store-%7C-Fashion-Store-%7C-E-commerce-UI-Kit-(Community)?node-id=0-1&p=f&t=97KMrgi9uV4jVlfs-0
