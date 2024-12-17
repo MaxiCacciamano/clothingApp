@@ -56,6 +56,10 @@ export  function getWomen() {
     }
     }
 
+    export function getGender(){
+        
+    }
+
 
 export function getError(){
     return {

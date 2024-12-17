@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import style from '../design/hamburgesa.module.css'
+import { SearchName } from './SearchName'
 
 export const Hamburgesa = () => {
       const [isOpen, setIsOpen] = useState(false)
@@ -27,8 +28,8 @@ export const Hamburgesa = () => {
                   <li><a href="#">Women</a></li>
                   <li><a href="#"></a>Kids</li>
                 </ul>
+               <SearchName/>
               </nav>
-               {/* <SearchName/> */}
              </div>
              </div>
     </div>

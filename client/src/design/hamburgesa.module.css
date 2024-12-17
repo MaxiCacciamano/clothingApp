@@ -1,11 +1,13 @@
 
+
 /* Animación de las barras cuando el menú está abierto */
 .nav {
     display: none;
     position: absolute; /* Posiciona el nav fuera del flujo normal */
-    top: 50px; /* Ajusta para colocarlo debajo del botón hamburguesa */
+    /* top: 50px; Ajusta para colocarlo debajo del botón hamburguesa */
+    width: 50%;
     left: 0;
-    width: 100%; /* Que ocupe todo el ancho */
+    margin: 20px;
     background-color: #fff; /* Fondo del menú desplegable */
     z-index: 10; /* Coloca el menú encima de otros elementos */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
@@ -17,8 +19,8 @@
 .nav ul {
     list-style: none;
     margin: 0;
-    padding: 0;
-    text-align: center;
+    /* padding: 0; */
+    text-align: left;
 }
 
 .nav ul li {
