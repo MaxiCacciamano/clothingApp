@@ -40,14 +40,14 @@ export const SearchName = () => {
   return (
     <div className= {style.search} >
       <form onSubmit={(e)=>handleSubmit(e)}>
-        <input
-        placeholder="What are you looking for?"
-        value={name}
-        onChange={e=>handleInput(e)}
-        />
         <button type='submit' onClick={e=>handleSearch(e)}>
          <img src= {lupa} />
         </button>
+        <input
+        placeholder="Search"
+        value={name}
+        onChange={e=>handleInput(e)}
+        />
 
 
       </form>

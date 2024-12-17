@@ -119,18 +119,26 @@
     height: 55%;
 }
 .search{
-    background-color: #F5F5F5;
+    background-color: #dfdddd;
     border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-
+.search form{
+    display: flex;
+}
+.search button{
+    height: 37px;
+}
 .search input{
-    background-color: #F5F5F5;
+    background-color: #dfdddd;
     border: none;
     padding: 10px;
     font-weight:400;
     color: #000;
+    text-align: end;
 }
 
 .search button{
-    background-color: #F5F5F5;
+    background-color: #dfdddd;
 }

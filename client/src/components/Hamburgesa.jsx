@@ -30,11 +30,9 @@ export const Hamburgesa = () => {
                 <ul>
                   <li><a href="#">Men</a></li>
                   <li><a href="#">Women</a></li>
-                  <li><a href="#"></a>Kids</li>
+                  <li><a href="#">Kids</a></li>
                 </ul>
-                <div className={style.search}>
-               <SearchName/>
-                </div>
+                <SearchName/>
               </nav>
              </div>
              </div>

@@ -5,14 +5,14 @@
     display: none;
     position: absolute; /* Posiciona el nav fuera del flujo normal */
     /* top: 50px; Ajusta para colocarlo debajo del botón hamburguesa */
-    /* width: 50%; */
-    left: 0;
-    margin: 20px;
+    width: 25%;
+    /* left: 0; */
+    margin-top: 70px;
     background-color: #fff; /* Fondo del menú desplegable */
     z-index: 10; /* Coloca el menú encima de otros elementos */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); Sombra opcional */
     display: none; /* Oculto inicialmente */
-    padding: 10px 0; /* Espaciado interno */
+    /* padding: 15px;  */
     transition: transform 0.3s ease, opacity 0.3s ease; /* Animación */
 }
 
@@ -56,4 +56,3 @@
     display: block;
 }
 
-.search{}
