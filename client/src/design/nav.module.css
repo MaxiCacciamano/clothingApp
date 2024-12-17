@@ -31,6 +31,8 @@
 
 .log{
     align-content: center;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .Frame556 .menu li{
@@ -48,7 +50,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between; /* Distribuir los elementos entre sí */
-    /* width: 0%; */
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
 }
 
 .Frame552 .favorito{
@@ -124,6 +128,7 @@
     border: none;
     padding: 10px;
     font-weight:400;
+    color: #000;
 }
 
 .search button{

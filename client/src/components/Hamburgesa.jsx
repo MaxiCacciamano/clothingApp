@@ -9,6 +9,10 @@ export const Hamburgesa = () => {
       const toggleMenu = ( ) => {
         setIsOpen(!isOpen)
       }
+      const handleMenuClick = (e)=>{
+        // Evita que el evento cierre el menu al interactuar con el input
+        e.stopPropagation();
+      }
   return (
     <div>
 
@@ -22,13 +26,15 @@ export const Hamburgesa = () => {
             </div>
              {/* Menú desplegable */}
              <div>
-              <nav className={`${style.nav} ${isOpen? style.show:''}`}>
+              <nav className={`${style.nav} ${isOpen? style.show:''}`} onClick={handleMenuClick}>
                 <ul>
                   <li><a href="#">Men</a></li>
                   <li><a href="#">Women</a></li>
                   <li><a href="#"></a>Kids</li>
                 </ul>
+                <div className={style.search}>
                <SearchName/>
+                </div>
               </nav>
              </div>
              </div>
