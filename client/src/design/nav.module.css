@@ -15,59 +15,11 @@
     align-content: center;
 }
 
-.nav {
-    display: none;
-    background-color: #333;
-    padding: 10px;
-}
-
-.nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.nav ul li {
-    margin: 10px 0;
-}
-
-.nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
 
 .Frame556 .menuToggle{
 
 }
 
-
-/* Animación de las barras cuando el menú está abierto */
-.bar{
-    height: 4px;
-    width: 100%;
-    background-color: #333;
-    border-radius: 4px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* ANIMACION DE LAS BARRAS CUANDO EL MENU ESTE ABIERTO */
-.open .bar:nth-child(1){
-    transform: rotate(45deg) translateY(8px);
-}
-
-.open .bar:nth-child(2){
-    opacity: 0;
-}
-
-.open .bar:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
-}
-/* MOSTRAR EL MENU DESPLEGABLE */
-.show {
-    display: block;
-}
 .Frame556 .menu ul{
     display: flex;
     gap: 30px;

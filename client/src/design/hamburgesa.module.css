@@ -1,0 +1,55 @@
+
+/* Animación de las barras cuando el menú está abierto */
+.nav {
+    display: none;
+    position: absolute; /* Posiciona el nav fuera del flujo normal */
+    top: 50px; /* Ajusta para colocarlo debajo del botón hamburguesa */
+    left: 0;
+    width: 100%; /* Que ocupe todo el ancho */
+    background-color: #fff; /* Fondo del menú desplegable */
+    z-index: 10; /* Coloca el menú encima de otros elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    display: none; /* Oculto inicialmente */
+    padding: 10px 0; /* Espaciado interno */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animación */
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav ul li {
+    margin: 10px 0;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+}
+.bar{
+    /* height: 4px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 4px; */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ANIMACION DE LAS BARRAS CUANDO EL MENU ESTE ABIERTO */
+.open .bar:nth-child(1){
+    transform: rotate(45deg) translateY(8px);
+}
+
+.open .bar:nth-child(2){
+    opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+/* MOSTRAR EL MENU DESPLEGABLE */
+.show {
+    display: block;
+}
