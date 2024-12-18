@@ -32,7 +32,7 @@
 .log{
     align-content: center;
     margin: 0 auto;
-    width: 100%;
+    width: 30%;
 }
 
 .Frame556 .menu li{
@@ -44,7 +44,9 @@
     cursor: pointer;
     font-weight: bold;
 }
-
+.Frame556 .menu li{
+    color: #000000;
+}
 .Frame552{
     display: flex;
     flex-direction: row;
@@ -56,7 +58,7 @@
 }
 
 .Frame552 .favorito{
-    background-color: black;
+    background-color: #000000;
     display: flex;
     align-items: center;
     align-content: center;
@@ -75,7 +77,7 @@
 }
 
 .Frame552 .cart .textoCart{
-    background-color: black;
+    background-color: #000000;
     color: white;
     /* padding: 20px; */
     height: 45px;
@@ -88,7 +90,7 @@
 }
 
 .Frame552 .cart .logoCarrito{
-    background-color: black;
+    background-color: #000000;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -103,7 +105,7 @@
 }
 
 .Frame552 .login{
-    background-color: black;
+    background-color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,9 +113,7 @@
     padding: 15px;
     cursor: pointer;
 }
-/* .Frame552 .cart img{
-    height: 45%;
-} */
+
 
 .Frame552 img{
     height: 55%;
@@ -123,12 +123,15 @@
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 95%;
+    margin-top: 20px;
 }
 .search form{
     display: flex;
 }
 .search button{
     height: 37px;
+    border-radius: 2px;
 }
 .search input{
     background-color: #dfdddd;
@@ -137,6 +140,8 @@
     font-weight:400;
     color: #000;
     text-align: end;
+    width: 90%;
+    border-radius: 2px;
 }
 
 .search button{
