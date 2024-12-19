@@ -85,6 +85,7 @@ export function getAccesorios(){
                     name: productos?.name || 'Unknown',
                     amount: productos?.amount || 0,
                     currency: productos?.currency || 'USD',
+                    image: productos?.image
                 }))
             )
             .filter(Boolean); // Filtra cualquier valor `undefined`

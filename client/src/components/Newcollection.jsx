@@ -31,10 +31,13 @@ export const Newcollection = () => {
      <Slider {...settings}>
      {
       accessories.map((e, index)=>(
-        <img key={`${e.name}-${index}`} src= {e.image} />
+        <div key={`${e.name}-${index}`}>
+        <img src= {e.image} alt={`Imagen${e.name}`} />
+        </div>
       ))
      }
-     <div>
+     </Slider>
+     {/* <div>
       <img src='../../clothing.json' alt='Imagen 1'/>
      </div>
      <div>
@@ -48,8 +51,7 @@ export const Newcollection = () => {
      </div>
      <div>
       <img src='https://via.placeholder.com/600x400?text=Imagen+5' alt='Imagen 5'/>
-     </div>
-     </Slider>
+     </div> */}
     </div>
     </div>
   )
