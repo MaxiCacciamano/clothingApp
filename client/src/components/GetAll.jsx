@@ -7,6 +7,7 @@ import style from '../design/getall.module.css'
 import { Shoes } from './Shoes'
 import { SearchName } from './SearchName'
 import { Filters } from './Filters'
+import { Newcollection } from './Newcollection'
 
 export const GetAll = () => {
     const dispatch = useDispatch()
@@ -28,7 +29,7 @@ export const GetAll = () => {
     // console.log(all)
   return (
     <div>
-    {
+    {/* {
           showRsult  &&(
             <div>
             {
@@ -49,7 +50,8 @@ export const GetAll = () => {
 
             </div>
           )
-        }
+        } */}
+        <Newcollection />
       <h1>Products</h1>
     <div className={style.products}>
        {
@@ -69,7 +71,6 @@ export const GetAll = () => {
        </div>
        <h1>Shoes</h1>
        <Shoes />
-
        <Filters />
 
     </div>
