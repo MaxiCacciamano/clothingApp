@@ -37,21 +37,6 @@ export const Newcollection = () => {
       ))
      }
      </Slider>
-     {/* <div>
-      <img src='../../clothing.json' alt='Imagen 1'/>
-     </div>
-     <div>
-      <img src='https://via.placeholder.com/600x400?text=Imagen+2' alt='Imagen 2'/>
-     </div>
-     <div>
-      <img src='https://via.placeholder.com/600x400?text=Imagen+3' alt='Imagen 3'/>
-     </div>
-     <div>
-      <img src='https://via.placeholder.com/600x400?text=Imagen+4' alt='Imagen 4'/>
-     </div>
-     <div>
-      <img src='https://via.placeholder.com/600x400?text=Imagen+5' alt='Imagen 5'/>
-     </div> */}
     </div>
     </div>
   )
