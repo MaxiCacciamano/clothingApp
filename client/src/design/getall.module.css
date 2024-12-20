@@ -11,16 +11,25 @@
     border-radius: 5%;
 }
 
-.slick{
-    width: 55%  !important;
-    margin: 0 auto;
-}
-
-.slickcarousel{
-    width: auto !important;
-    margin: 0 auto;
-}
-
-.slickcarousel img{
-    /* margin: 0 auto; */
-}
+.collection {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: row; /* Organiza los hijos en fila */
+    justify-content: space-between; /* Espaciado entre columnas */
+    align-items: flex-start; /* Alinea elementos al inicio verticalmente */
+    gap: 20px; /* Espacio entre columnas */
+  }
+  
+  .presentacion {
+    flex: 1; /* Ocupa una porción igual del espacio disponible */
+    text-align: center;
+  }
+  
+  .carrusel {
+    flex: 2;
+    max-width: 600px; /* Ajusta según tu diseño */
+  }

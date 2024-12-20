@@ -23,14 +23,15 @@ export const Newcollection = () => {
       dispatch(getAccesorios())
     })
   return (
-    <div>
-    <div>
-    <h1>New collection</h1>
-    <p>Summer 2024</p>
-    </div>
-    <div>
-     <h2>Carrousel de imagenes</h2>
-     <Slider {...settings} className={style.slick}>
+    <div className={style.collection}>
+    <div className={style.contenedor}>
+     <div className={style.presentacion}>
+      <h1>New collection</h1>
+      <p>Summer 2024</p>  
+     </div>
+        <div className={style.carrusel}>
+      <h2>Carrousel de imagenes</h2>
+     <Slider {...settings}>
      {
       accessories.map((e, index)=>(
         <div key={`${e.name}-${index}`} className={style.slickcarousel}>
@@ -39,6 +40,7 @@ export const Newcollection = () => {
       ))
      }
      </Slider>
+     </div>
     </div>
     </div>
   )
