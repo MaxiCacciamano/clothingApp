@@ -27,6 +27,18 @@
   .presentacion {
     flex: 1; /* Ocupa una porción igual del espacio disponible */
     text-align: center;
+    margin-top:50px ;
+  }
+
+  .presentacion h1{
+    text-align: left;
+    line-height: 0.9;
+    margin: 1px;
+  }
+
+  .presentacion p{
+    text-align: left;
+    font-weight: bold;
   }
   
   .carrusel {

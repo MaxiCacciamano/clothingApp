@@ -26,8 +26,8 @@ export const Newcollection = () => {
     <div className={style.collection}>
     <div className={style.contenedor}>
      <div className={style.presentacion}>
-      <h1>New collection</h1>
-      <p>Summer 2024</p>  
+      <h1>New<br/> collection</h1>
+      <p>Summer<br/> 2024</p>  
      </div>
         <div className={style.carrusel}>
       <h2>Carrousel de imagenes</h2>
