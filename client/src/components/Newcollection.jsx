@@ -5,6 +5,8 @@ import arrow from '../../public/IMG/Arrow.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAccesorios } from '../redux/action';
 
+import style from '../design/getall.module.css'
+
 export const Newcollection = () => {
   const dispatch = useDispatch()
       const accessories = useSelector(state=>state.accessories)
@@ -13,7 +15,7 @@ export const Newcollection = () => {
       dots: true, // Mostrar puntos de navegación
       infinite: false, // Carrusel infinito
       speed: 500, // Velocidad de transición en milisegundos
-      slidesToShow: 1, // Cuántas imágenes se mostrarán a la vez
+      slidesToShow: 2, // Cuántas imágenes se mostrarán a la vez
       slidesToScroll: 1, // Cuántas imágenes se desplazan por vez
     };
 
@@ -28,11 +30,11 @@ export const Newcollection = () => {
     </div>
     <div>
      <h2>Carrousel de imagenes</h2>
-     <Slider {...settings}>
+     <Slider {...settings} className={style.slick}>
      {
       accessories.map((e, index)=>(
-        <div key={`${e.name}-${index}`}>
-        <img src= {e.image} alt={`Imagen${e.name}`} />
+        <div key={`${e.name}-${index}`} className={style.slickcarousel}>
+         <img src= {e.image} alt={`Imagen: ${e.name}`} />
         </div>
       ))
      }

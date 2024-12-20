@@ -10,3 +10,17 @@
     width: 30%;
     border-radius: 5%;
 }
+
+.slick{
+    width: 55%  !important;
+    margin: 0 auto;
+}
+
+.slickcarousel{
+    width: auto !important;
+    margin: 0 auto;
+}
+
+.slickcarousel img{
+    /* margin: 0 auto; */
+}
