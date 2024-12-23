@@ -13,7 +13,10 @@
 
 .collection {
     width: 100%;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    margin-top: 100px;
   }
   
   .contenedor {
@@ -25,23 +28,60 @@
   }
   
   .presentacion {
+    display: flex;
+    flex-direction: column;
     flex: 1; /* Ocupa una porción igual del espacio disponible */
     text-align: center;
-    margin-top:50px ;
+    margin-top:10px ;
+    height: 49vh;
   }
 
   .presentacion h1{
     text-align: left;
-    line-height: 0.9;
-    margin: 1px;
+    line-height: 1;
+    margin: 0;
+
+    font-size: 48px;
+    font-weight: 400;
+    /* line-height: 0.9px; */
+    letter-spacing: 2px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
   }
 
   .presentacion p{
     text-align: left;
     font-weight: bold;
   }
+
+  .presentacion button{
+    margin-top: auto; /* Empuja el botón hacia abajo */
+    align-self: flex-start; /* Opcional: Alinéalo según el diseño */
+    display: flex;
+    align-items: center;
+    background-color: #D9D9D9;
+    color: #000000;
+
+    width: 265px;
+
+    border-radius: 2px;
+    justify-content: space-between;
+  }
+
+  .presentacion img{
+    
+  }
   
   .carrusel {
     flex: 2;
-    max-width: 600px; /* Ajusta según tu diseño */
+    max-width: 800px;
+  }
+
+  .slickcarousel{
+
+  }
+  
+  .slickcarousel img{
+    width: 366px;
+    height: 376px;
   }
