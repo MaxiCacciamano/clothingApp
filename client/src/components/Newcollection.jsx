@@ -19,7 +19,17 @@ export const Newcollection = () => {
       const { className, style, onClick } = props;
       return(
         <div
-        // style={{ ...style, display: "block", left: "140px", zIndex: 10 }}
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          // background: "black",
+          borderRadius: "50%",
+          // left: "-120px", // Ajusta la posición horizontal,
+          // bottom:'-50',
+          // zIndex: 1, // Asegúrate de que la flecha esté visible
+          // position:'relative'
+        }}
         onClick={onClick}
         >
           <img src={carrusel}/>
@@ -28,10 +38,11 @@ export const Newcollection = () => {
     }
 
     const CustomNextArrow = (props)=>{
-      const { className, style, onClick } = props;
+      const { className, onClick } = props;
       return(
         <div
-        // style={{ ...style, display: "block", right: "-40px", zIndex: 10 }}
+        className={className}
+        // style={{ ...style, display: "block", right: "10px",  }}
         onClick={onClick}
         >
           <img src={carrusel}/>
@@ -58,7 +69,7 @@ export const Newcollection = () => {
     <div className={style.collection}>
     <div className={style.contenedor}>
      <div className={style.presentacion}>
-      <h1>New<br/> collection</h1>
+      <h1>NEW<br/>COLLECTION</h1>
       <p>Summer<br/> 2024</p>  
       <button>Go To Shop <img src={arrow}/></button>
      </div>

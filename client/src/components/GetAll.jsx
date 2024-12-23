@@ -8,6 +8,7 @@ import { Shoes } from './Shoes'
 import { SearchName } from './SearchName'
 import { Filters } from './Filters'
 import { Newcollection } from './Newcollection'
+import { Newwek } from './Newwek'
 
 export const GetAll = () => {
     const dispatch = useDispatch()
@@ -52,6 +53,7 @@ export const GetAll = () => {
           )
         } */}
         <Newcollection />
+        <Newwek/>
       <h1>Products</h1>
     <div className={style.products}>
        {

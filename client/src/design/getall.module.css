@@ -42,7 +42,7 @@
     margin: 0;
 
     font-size: 48px;
-    font-weight: 400;
+    /* font-weight: 400; */
     /* line-height: 0.9px; */
     letter-spacing: 2px;
     text-underline-position: from-font;
@@ -51,7 +51,8 @@
 
   .presentacion p{
     text-align: left;
-    font-weight: bold;
+    font-weight: 100;
+    margin: 0;
   }
 
   .presentacion button{
@@ -74,14 +75,18 @@
   
   .carrusel {
     flex: 2;
-    max-width: 800px;
+    max-width: 760px;
   }
 
   .slickcarousel{
-
+    display: flex;
+    justify-content: right;
   }
   
   .slickcarousel img{
     width: 366px;
     height: 376px;
   }
+
+
+
