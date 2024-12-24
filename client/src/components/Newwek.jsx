@@ -27,7 +27,7 @@ export const Newwek = () => {
     <div className={style.newwek}>
     <div className={style.info}>
         <h1>New<br/> this week</h1>
-        <p style={{marginTop:'auto'}}>See more</p>
+        <p style={{marginTop:'auto', marginRight:'10px'}}>See more</p>
     </div>
         <div className={style.carrusel}>
         <Slider {...settings}>
