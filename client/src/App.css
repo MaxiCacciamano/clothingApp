@@ -11,8 +11,13 @@
 }
 
 
-H1 {
+h1 {
   font-family: "Beatrice Deck Trial Extrabold";
+}
+
+p{
+  font-family: "Beatrice Deck Trial ";
+  font-weight: 500;
 }
 
 #root {

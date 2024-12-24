@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 
 import style from '../design/newwek.module.css'
+
+
 import Slider from 'react-slick';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAccesorios } from '../redux/action';
@@ -10,7 +12,7 @@ export const Newwek = () => {
 
     useEffect(()=>{
         dispatch(getAccesorios())
-    })
+    },[])
 
         // Configuración básica para el carrusel
         const settings = {
@@ -23,16 +25,25 @@ export const Newwek = () => {
           };
   return (
     <div className={style.newwek}>
+    <div className={style.info}>
         <h1>New<br/> this week</h1>
+        <p style={{marginTop:'auto'}}>See more</p>
+    </div>
+        <div className={style.carrusel}>
         <Slider {...settings}>
             {
                 accessories.map((a, index)=>(
-                <div key={`${a.name}-${index}`} className={style.slickcarousel}>
-                   <img src= {a.image}  alt={`Imagen: ${a.name}`} />
+                <div key={`${a.name}-${index}`} className={style.slicknew}>
+                    <img src= {a.image}  alt={`Imagen: ${a.name}`} />
+                     <div className={style.info}>
+                      <p><span> {a.name} </span></p>
+                      <p> {a.currency} {a.amount} </p>
+                     </div>
                 </div>
                 ))
             }
         </Slider>
+        </div>
     </div>
   )
 }

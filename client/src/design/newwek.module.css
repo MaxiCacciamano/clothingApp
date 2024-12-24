@@ -1,8 +1,36 @@
 .newwek{
     margin-top: 100px;
+    width: auto;
 }
 
 .newwek h1{
     text-align: left;
     text-transform: uppercase;
+    margin-bottom: auto;
+}
+
+
+.info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.slicknew{
+    width: 95% !important;
+    margin-top: 20px;
+    
+}
+
+.slicknew img{
+    width: 100%;
+    height: 320px;
+    
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

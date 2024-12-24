@@ -14,6 +14,11 @@ export const Newcollection = () => {
       const accessories = useSelector(state=>state.accessories)
 
 
+      useEffect(()=>{
+        dispatch(getAccesorios())
+      }, [dispatch])
+
+
           //Componente personalizado para la flecha
     const CustomPrevArrow= (props) => {
       const { className, style, onClick } = props;
@@ -61,10 +66,6 @@ export const Newcollection = () => {
       nextArrow:<CustomNextArrow/>
     };
 
-
-    useEffect(()=>{
-      dispatch(getAccesorios())
-    })
   return (
     <div className={style.collection}>
     <div className={style.contenedor}>

@@ -25,7 +25,7 @@ export const GetAll = () => {
         dispatch(getWomen('your-category-api-endpoint')) // Replace with the correct endpoint if necessary
       }
         dispatch(getAccesorios())
-    },[])
+    },[dispatch])
 
     // console.log(all)
   return (
@@ -62,7 +62,7 @@ export const GetAll = () => {
         ))
        }
        </div>
-       <h1>Accesorios</h1>
+       {/* <h1>Accesorios</h1>
        <div className={style.products}>
       {
         accessories.map((a, index)=>(
@@ -70,7 +70,7 @@ export const GetAll = () => {
         ))
        }
        
-       </div>
+       </div> */}
        <h1>Shoes</h1>
        <Shoes />
        <Filters />
