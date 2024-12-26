@@ -2,6 +2,7 @@ import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { filterCategories, getShoes } from '../redux/action'
 
+import style from '../design/filterCat.module.css'
 
 export const Filtercategory = () => {
     const dispatch = useDispatch()
@@ -13,16 +14,16 @@ export const Filtercategory = () => {
     }
   return (
     <div>
-      <div style={{display:'flex', flexDirection:'row'}}>
+      <div style={{display:'flex', flexDirection:'row'}} className={style.filterClothing}>
         {/* <h2>Category</h2> */}
-        <select name='category' onChange={e => handleFilterCategory(e)}>
-            <option value="All">All</option>
-            <option value="Dresses">Dresses</option>
-            <option value="Tops">Tops</option>
-            <option value="Pants">Pants</option>
+        <ul name='category' onChange={e => handleFilterCategory(e)}>
+            <li><option value="All">All</option></li>
+            <li><option value="Dresses">Dresses</option></li>
+            <li><option value="Tops">Tops</option></li>
+            <li><option value="Pants">Pants</option></li>
             {/* <option value="Skirts">Skirts</option> */}
-            <option value="Shorts">Shorts</option>
-        </select>
+            <li><option value="Shorts">Shorts</option></li>
+        </ul>
       </div>
         </div>
   )

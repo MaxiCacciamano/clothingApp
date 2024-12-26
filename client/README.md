@@ -10,3 +10,6 @@ Currently, two official plugins are available:
 
 
 https://www.figma.com/design/XflCZZyosJl341GPe6aEib/Cloth-Store-%7C-Fashion-Store-%7C-E-commerce-UI-Kit-(Community)?node-id=0-1&p=f&t=97KMrgi9uV4jVlfs-0
+
+#font-famili
+https://www.onlinewebfonts.com/download/2f7259ecfaa5e475102e4002d64ce981

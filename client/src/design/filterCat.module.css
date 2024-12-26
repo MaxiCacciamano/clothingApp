@@ -1,0 +1,9 @@
+.filterClothing ul{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    list-style: none;
+    text-align: left;
+
+    cursor: pointer;
+}

@@ -54,7 +54,13 @@ export const GetAll = () => {
         } */}
         <Newcollection />
         <Newwek/>
-      <h1>Products</h1>
+      <h1 style={{textAlign:'left',lineHeight:'1', marginTop:'100px'}}>
+      XIV
+      <br/>
+      Collections
+      <br/>
+      23-24</h1>
+    <Filters />
     <div className={style.products}>
        {
         all.map((e, index)=>(
@@ -73,7 +79,6 @@ export const GetAll = () => {
        </div> */}
        <h1>Shoes</h1>
        <Shoes />
-       <Filters />
 
     </div>
   )
