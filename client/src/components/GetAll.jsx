@@ -7,8 +7,9 @@ import style from '../design/getall.module.css'
 import { Shoes } from './Shoes'
 import { SearchName } from './SearchName'
 import { Filters } from './Filters'
-import { Newcollection } from './Newcollection'
-import { Newwek } from './Newwek'
+import { Newcollection } from './Carrusel/Newcollection'
+import { Newwek } from './Carrusel/Newwek'
+import { Xvcolecctions } from './Carrusel/Xvcolecctions'
 
 export const GetAll = () => {
     const dispatch = useDispatch()
@@ -61,13 +62,16 @@ export const GetAll = () => {
       <br/>
       23-24</h1>
     <Filters />
+
+
     <div className={style.products}>
-       {
+       {/* {
         all.map((e, index)=>(
           <Card key={`${e.name}-${index}`} name={e.name} amount={e.amount} currency={e.currency} image= {e.image} />
         ))
-       }
+       } */}
        </div>
+       <Xvcolecctions/>
        {/* <h1>Accesorios</h1>
        <div className={style.products}>
       {

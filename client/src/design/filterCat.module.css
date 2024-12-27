@@ -6,4 +6,16 @@
     text-align: left;
 
     cursor: pointer;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.filterClothing li{
+    margin-right: 30px;
+    color: #8A8A8A;
+    font-weight: 500;
+}
+
+.filterClothing li:hover{
+    color: #000000;
 }

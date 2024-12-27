@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { filterCategories, getShoes } from '../redux/action'
 
@@ -6,6 +6,9 @@ import style from '../design/filterCat.module.css'
 
 export const Filtercategory = () => {
     const dispatch = useDispatch()
+
+    const [sum, setSum] = useState(true)
+
     function handleFilterCategory(category){
         // e.preventDefault();
         // const selectedCategory = e.target.value
@@ -13,7 +16,7 @@ export const Filtercategory = () => {
         dispatch(filterCategories(category))
     }
 
-    const categories = ["ALL", "Dresses", "Tops", "Pants", "Shorts"]
+    const categories = ["(ALL)", "Dresses", "Tops", "Pants", "Shorts"]
   return (
     <div>
       <div style={{display:'flex', flexDirection:'row'}} className={style.filterClothing}>
@@ -28,14 +31,13 @@ export const Filtercategory = () => {
             </li>
           ))
         }
-            {/* <li><option value="All">All</option></li>
-            <li><option value="Dresses">Dresses</option></li>
-            <li><option value="Tops">Tops</option></li>
-            <li><option value="Pants">Pants</option></li> */}
-            {/* <option value="Skirts">Skirts</option> */}
-            {/* <li><option value="Shorts">Shorts</option></li> */}
         </ul>
       </div>
+      {/* <div>
+        <button>Filter({sum?"+":"-"})</button>
+
+        <p>Sorts(+)</p>
+      </div> */}
         </div>
   )
 }

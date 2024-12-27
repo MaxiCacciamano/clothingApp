@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 
-import style from '../design/newwek.module.css'
+import style from '../../design/newwek.module.css'
 
 
 import Slider from 'react-slick';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAccesorios } from '../redux/action';
+import { getAccesorios } from '../../redux/action';
 import { Link } from 'react-router-dom';
 export const Newwek = () => {
     const dispatch = useDispatch()
