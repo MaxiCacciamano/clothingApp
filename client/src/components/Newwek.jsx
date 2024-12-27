@@ -15,18 +15,19 @@ export const Newwek = () => {
     },[])
 
     const CustonNextArrow = ({onClick})=>(
-        <button className={style.customArrow} onClick={onClick} style={{marginLeft:'60px'}}>
+        <button className={`${style.customArrow} ${style.prev}`} onClick={onClick}>
             ▶
         </button>
     );
 
     const CustomPrevArrow = ({onClick})=>(
-        <button className={style.customArrow} onClick={onClick} style={{}}>
+        <button className={`${style.customArrow} ${style.next}`} onClick={onClick} >
         ◀
         </button>
     )
 
         // Configuración básica para el carrusel
+        
         const settings = {
             dots: false, // Mostrar puntos de navegación
             infinite: false, // Carrusel infinito

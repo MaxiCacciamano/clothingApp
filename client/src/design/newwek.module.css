@@ -52,21 +52,34 @@
     font-family: "Beatrice Deck Trial Medium";
 }
 
+.carrusel{
+    position: relative;
+}
 .customArrow{
+    /* top: 50%; /* Centra verticalmente */
+    /* transform: translateY(-50%); Asegura el centrado perfecto */ 
     position: absolute;
     bottom: -40px; /* Ubicadas debajo del carrusel */
     background-color: #fff;
-    border: none;
-    /* border-radius: 50%; */
+    border:1px solid gray;
+    border-radius: 1px;
     /* width: 40px; */
     /* height: 40px; */
     /* font-size: 20px; */
     color: #000;
     cursor: pointer;
-    box-shadow: 0     2px 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0     2px 5px rgba(0, 0, 0, 0.2); */
     /* z-index: 10; */
 }
 
 .customArrow:hover {
     background-color: #ddd;
+  }
+
+  .customArrow.prev{
+    left: 48.5%;
+  }
+
+  .customArrow.next{
+   right: 52%;
   }
