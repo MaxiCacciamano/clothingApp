@@ -15,7 +15,10 @@
     flex-direction: row;
     align-items: center;
     align-content: center;
+
+    line-height: 1;
 }
+
 
 .slicknew{
     width: 90% !important;
