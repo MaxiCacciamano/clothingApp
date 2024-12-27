@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './App.css'
 
 import {Home} from './page/Home'
+import { Details } from './page/Details';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
     <div>
      <Routes>
        <Route path="/" element={<Home/>}/>
+       <Route path="/details" element={<Details/>}/>
      </Routes>
     </div>
   )

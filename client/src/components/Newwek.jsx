@@ -6,6 +6,7 @@ import style from '../design/newwek.module.css'
 import Slider from 'react-slick';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAccesorios } from '../redux/action';
+import { Link } from 'react-router-dom';
 export const Newwek = () => {
     const dispatch = useDispatch()
     const accessories = useSelector(state=>state.accessories)
@@ -47,9 +48,13 @@ export const Newwek = () => {
         <div className={style.carrusel}>
         <Slider {...settings}>
             {
+                //agregar el detalle de cada producto
+
                 accessories.map((a, index)=>(
                 <div key={`${a.name}-${index}`} className={style.slicknew}>
-                    <img src= {a.image}  alt={`Imagen: ${a.name}`} />
+                <Link to="/details" style={{width:'98%'}}>
+                    <img src= {a.image}  alt={`Imagen: ${a.name}`} style={{cursor:'pointer'}}/>
+                </Link>
                      <div className={style.info}>
                       <p><span> {a.name} </span></p>
                       <p> {a.currency} {a.amount} </p>
