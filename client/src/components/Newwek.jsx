@@ -52,8 +52,12 @@ export const Newwek = () => {
 
                 accessories.map((a, index)=>(
                 <div key={`${a.name}-${index}`} className={style.slicknew}>
-                <Link to="/details" style={{width:'98%'}}>
-                    <img src= {a.image}  alt={`Imagen: ${a.name}`} style={{cursor:'pointer'}}/>
+                    <img src= {a.image}  alt={`Imagen: ${a.name}`}/>
+                <Link to="/details" style={{position:'absolute',bottom:'55px'}}>
+                     <button style={{background:'#DCDCDC', color:'black', fontSize:'20px', padding:'10px', 
+                     borderRadius:'5px',height:'40px', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center'}}>
+                     +
+                     </button>
                 </Link>
                      <div className={style.info}>
                       <p><span> {a.name} </span></p>
