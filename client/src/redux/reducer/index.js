@@ -44,7 +44,7 @@ export default function rootReducer(state = initialState, action){
                 error: action.payload
             }
         }
-        case 'FILTER_CATEGORY_CLOTHING':{
+        case 'GET_PRODUCTS_BY_GENDER':{
             return{
                 ...state,
                 women: action.payload
