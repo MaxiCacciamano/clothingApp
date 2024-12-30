@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Card } from './Card'
-import { getWomen, getAccesorios, getShoes } from '../redux/action'
+import { getWomen, getShoes } from '../redux/action'
 
 import style from '../design/getall.module.css'
 import { Shoes } from './Shoes'
@@ -14,7 +14,6 @@ import { Xvcolecctions } from './Carrusel/Xvcolecctions'
 export const GetAll = () => {
     const dispatch = useDispatch()
     const all = useSelector(state=>state.women)
-    const {accessories} = useSelector(state => state)
 
     const searchProduct = useSelector(state=>state.productsearch)
     const error = useSelector(state => state.error);
@@ -25,7 +24,6 @@ export const GetAll = () => {
       if(!all.length){
         dispatch(getWomen('your-category-api-endpoint')) // Replace with the correct endpoint if necessary
       }
-        dispatch(getAccesorios())
     },[dispatch])
 
     // console.log(all)

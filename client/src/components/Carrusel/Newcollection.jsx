@@ -5,7 +5,7 @@ import arrow from '../../../public/IMG/Arrow.png'
 import carrusel from '../../../public/IMG/Vector.png'
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getAccesorios } from '../../redux/action';
+import { getAccesorios, getShoes } from '../../redux/action';
 
 import style from '../../design/getall.module.css'
 

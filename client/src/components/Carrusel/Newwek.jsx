@@ -15,7 +15,7 @@ export const Newwek = () => {
         dispatch(getAccesorios())
     },[])
 
-    const CustonNextArrow = ({onClick})=>(
+    const CustomNextArrow = ({onClick})=>(
         <button className={`${style.customArrow} ${style.prev}`} onClick={onClick}>
             ▶
         </button>
@@ -35,13 +35,13 @@ export const Newwek = () => {
             speed: 500, // Velocidad de transición en milisegundos
             slidesToShow: 4, // Cuántas imágenes se mostrarán a la vez
             slidesToScroll: 3, // Cuántas imágenes se desplazan por vez
-            arrow:true,
-            nextArrow:<CustonNextArrow/>,
+            nextArrow:<CustomNextArrow/>,
             prevArrow:<CustomPrevArrow/>
           };
   return (
     <div className={style.newwek}>
     <div className={style.info}>
+    
         <h1>New<br/> this week</h1>
         <a href='#' style={{marginTop:'auto', marginRight:'10px'}}>See more</a>
     </div>
@@ -54,7 +54,7 @@ export const Newwek = () => {
                 <div key={`${a.name}-${index}`} className={style.slicknew}>
                     <img src= {a.image}  alt={`Imagen: ${a.name}`}/>
                 <Link to="/details" style={{position:'absolute',bottom:'55px'}}>
-                     <button style={{background:'#DCDCDC', color:'black', fontSize:'20px', padding:'10px', 
+                     <button className={style.buttonPlus} style={{background:'#DCDCDC', color:'black', fontSize:'20px', padding:'10px', 
                      borderRadius:'5px',height:'40px', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center'}}>
                      +
                      </button>

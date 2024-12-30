@@ -130,6 +130,7 @@ export function getShoes(){
                     amount: product?.amount || 0,
                     currency: product?.currency || 'USD',
                     category: categoryName,
+                    image: product?.image
                 }));
 
                 return products || [];
