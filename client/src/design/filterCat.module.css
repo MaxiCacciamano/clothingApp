@@ -1,3 +1,11 @@
+.filterClothing{
+    border-bottom: 1px solid #DFDFDF;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
 .filterClothing ul{
     display: flex;
     flex-direction: row;

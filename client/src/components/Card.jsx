@@ -12,9 +12,9 @@ export const Card = ({name, amount, currency, image}) => {
   // },[dispatch])
   return (
     <div className={style.product}>
+      <img src={image} />
       <h2> {name} </h2>
       <h2>{currency} {amount}</h2>
-      <img src={image} />
     </div>
   )
 }

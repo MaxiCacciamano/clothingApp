@@ -16,7 +16,7 @@ export const Filtercategory = () => {
         dispatch(filterCategories(category))
     }
 
-    const categories = ["(ALL)", "Dresses", "Tops", "Pants", "Shorts"]
+    const categories = ["(ALL)", "Men", "Women", "Kids"]
   return (
     <div>
       <div style={{display:'flex', flexDirection:'row'}} className={style.filterClothing}>

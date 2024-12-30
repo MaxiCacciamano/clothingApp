@@ -33,6 +33,10 @@
     
 }
 
+.slicknew p{
+    font-size: 14px;
+}
+
 .slick-slide{
     width: auto;
 }
@@ -63,7 +67,7 @@
     position: absolute;
     bottom: -40px; /* Ubicadas debajo del carrusel */
     background-color: #fff;
-    border:1px solid gray;
+    border:1px solid #ddd;
     border-radius: 1px;
     color: #000;
 }

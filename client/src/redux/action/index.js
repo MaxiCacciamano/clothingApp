@@ -34,6 +34,8 @@ export async function products(){
             }
             return [];
         })
+        console.log(allProducts, "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")
+        //filtrar 
         return allProducts   
 }
     catch(err){
@@ -154,14 +156,26 @@ export function getShoes(){
 
 }
 export function filterCategories(payload){
-    try{
-        return{
-            type:'FILTER_CATEGORY_CLOTHING',
-            payload
+    return function(dispatch){
+        try{
+            return axios
+            .get('../../../clothing.json')
+            .then(res=>{
+                const clothing = res.data.catalog.clothing;
+
+                // const categories = ['Women', 'Men', 'Girls', 'Boys'];
+
+                //filtrar productos por genders
+
+                dispatch({
+                    type:'FILTER_CATEGORY_CLOTHING',
+                    payload:shoesByCategory
+                })
+            })
         }
-    }
-    catch(err){
-        console.log("Error, algo salio mal", err)
+        catch(err){
+            console.log("Error, algo salio mal", err)
+        }
     }
 }
 

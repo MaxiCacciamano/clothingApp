@@ -53,32 +53,20 @@ export const GetAll = () => {
         } */}
         <Newcollection />
         <Newwek/>
-      <h1 style={{textAlign:'left',lineHeight:'1', marginTop:'100px'}}>
-      XIV
-      <br/>
-      Collections
-      <br/>
-      23-24</h1>
+        <div className='titleXV'>
+           <h1 style={{textAlign:'left',lineHeight:'1', marginTop:'100px'}}>
+           XIV
+           <br/>
+           Collections
+           <br/>
+           23-24</h1>
+        </div>
     <Filters />
 
 
     <div className={style.products}>
-       {/* {
-        all.map((e, index)=>(
-          <Card key={`${e.name}-${index}`} name={e.name} amount={e.amount} currency={e.currency} image= {e.image} />
-        ))
-       } */}
        </div>
        <Xvcolecctions/>
-       {/* <h1>Accesorios</h1>
-       <div className={style.products}>
-      {
-        accessories.map((a, index)=>(
-          <Card key={`${a.name}-${index}`} name={a.name} amount={a.amount}  currency={a.currency} image={a.image} />
-        ))
-       }
-       
-       </div> */}
        <h1>Shoes</h1>
        <Shoes />
 
