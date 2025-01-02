@@ -57,7 +57,7 @@ export const Newcollection = () => {
     // Configuración básica para el carrusel
     const settings = {
       dots: true, // Mostrar puntos de navegación
-      infinite: false, // Carrusel infinito
+      infinite: true, // Carrusel infinito
       speed: 500, // Velocidad de transición en milisegundos
       slidesToShow: 2, // Cuántas imágenes se mostrarán a la vez
       slidesToScroll: 1, // Cuántas imágenes se desplazan por vez

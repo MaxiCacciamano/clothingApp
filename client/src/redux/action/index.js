@@ -163,13 +163,17 @@ export function filterCategories(payload){
             .then(res=>{
                 const clothing = res.data.catalog.clothing;
 
-                // const categories = ['Women', 'Men', 'Girls', 'Boys'];
+                const categories = ['Women', 'Men', 'Girls', 'Boys'];
 
-                //filtrar productos por genders
+                const gender = categories.map((category)=>{
+                    const mainCategory = clothing.categories.find(
+                        (cat)=> cat.name === category
+                    )
+                })
 
                 dispatch({
                     type:'FILTER_CATEGORY_CLOTHING',
-                    payload:shoesByCategory
+                    payload
                 })
             })
         }

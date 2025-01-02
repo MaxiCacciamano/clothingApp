@@ -16,7 +16,7 @@ export const Xvcolecctions = () => {
     },[])
     const settings = {
         dots: false, // Mostrar puntos de navegación
-        infinite: true, // Carrusel infinito
+        infinite: false, // Carrusel infinito
         speed: 100, // Velocidad de transición en milisegundos
         slidesToShow: 4, // Cuántas imágenes se mostrarán a la vez
         slidesToScroll: 2, // Cuántas imágenes se desplazan por vez
@@ -34,8 +34,8 @@ export const Xvcolecctions = () => {
           <div key={`${e.name}-${index}`} className={style.slicknew}>
                     <img src= {e.image}  alt={`Imagen: ${e.name}`}/>
                 <Link to="/details" style={{position:'absolute',bottom:'70px'}}>
-                     <button className={style.buttonPlus} style={{background:'transparent', color:'#787878', fontSize:'20px', padding:'20px', 
-                     borderRadius:'5px',height:'40px', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center'}}>
+                     <button className={style.buttonPlus} style={{background:'transparent', color:'#787878', fontSize:'20px', padding:'10px', 
+                     borderRadius:'5px', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center'}}>
                      +
                      </button>
                 </Link>
@@ -49,7 +49,9 @@ export const Xvcolecctions = () => {
        }
         </Slider>
         <div>
+        <a>
           More
+        </a>
           
         </div>
         </div>

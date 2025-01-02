@@ -13,3 +13,5 @@ https://www.figma.com/design/XflCZZyosJl341GPe6aEib/Cloth-Store-%7C-Fashion-Stor
 
 #font-famili
 https://www.onlinewebfonts.com/download/2f7259ecfaa5e475102e4002d64ce981
+
+#Revisar funcionamiento trancision carrusel

@@ -31,10 +31,10 @@ export const Newwek = () => {
         
         const settings = {
             dots: false, // Mostrar puntos de navegación
-            infinite: false, // Carrusel infinito
-            speed: 500, // Velocidad de transición en milisegundos
+            infinite: true, // Carrusel infinito
+            speed: 400, // Velocidad de transición en milisegundos
             slidesToShow: 4, // Cuántas imágenes se mostrarán a la vez
-            slidesToScroll: 3, // Cuántas imágenes se desplazan por vez
+            slidesToScroll: 1, // Cuántas imágenes se desplazan por vez
             nextArrow:<CustomNextArrow/>,
             prevArrow:<CustomPrevArrow/>
           };
@@ -54,8 +54,8 @@ export const Newwek = () => {
                 <div key={`${a.name}-${index}`} className={style.slicknew}>
                     <img src= {a.image}  alt={`Imagen: ${a.name}`}/>
                 <Link to="/details" style={{position:'absolute',bottom:'55px'}}>
-                     <button className={style.buttonPlus} style={{background:'#DCDCDC', color:'black', fontSize:'20px', padding:'10px', 
-                     borderRadius:'5px',height:'40px', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center'}}>
+                     <button className={style.buttonPlus} style={{background:'#DFDFDF', color:'#787878', fontSize:'20px', padding:'10px', 
+                     borderRadius:'5px', display:'flex', alignItems:'center', alignContent:'center',justifyContent:'center'}}>
                      +
                      </button>
                 </Link>
