@@ -9,11 +9,11 @@ export const Filtercategory = () => {
 
     const [sum, setSum] = useState(true)
 
-    function handleFilterCategory(category){
+    function handleFilterCategory(gender){
         // e.preventDefault();
         // const selectedCategory = e.target.value
         // console.log(selectedCategory, "e.target.value")
-        dispatch(filterCategories(category))
+        dispatch(filterCategories(gender))
     }
 
     const categories = ["(ALL)", "Men", "Women", "Kids"]

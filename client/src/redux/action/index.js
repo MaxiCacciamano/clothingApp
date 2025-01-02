@@ -1,4 +1,5 @@
-import axios from 'axios';
+
+import axios from 'axios'
 
 function extractProducts(category){
     return category?.categories.flatMap((subcategory)=>
@@ -155,30 +156,61 @@ export function getShoes(){
     }
 
 }
-export function filterCategories(payload){
-    return function(dispatch){
-        try{
-            return axios
-            .get('../../../clothing.json')
-            .then(res=>{
-                const clothing = res.data.catalog.clothing;
+export async function getProductsByGender(gender) {
+    try {
+        const response = await axios.get('../../../clothing.json');
+        const clothing = response.data.catalog.clothing;
 
-                const categories = ['Women', 'Men', 'Girls', 'Boys'];
+        // Encuentra la categoría principal basada en el género
+        const category = clothing.categories.find(
+            (cat) => cat.name.toLowerCase() === gender.toLowerCase()
+        );
 
-                const gender = categories.map((category)=>{
-                    const mainCategory = clothing.categories.find(
-                        (cat)=> cat.name === category
-                    )
-                })
+        if (category) {
+            // Encuentra la subcategoría "Clothing"
+            const subcategory = category.categories.find(
+                (subcat) => subcat.name === 'Clothing'
+            );
 
-                dispatch({
-                    type:'FILTER_CATEGORY_CLOTHING',
-                    payload
-                })
-            })
+            if (subcategory) {
+                // Extrae y retorna los productos
+                return extractProducts(subcategory);
+            }
         }
+
+        // Retorna un array vacío si no se encuentran productos
+        return [];
+    } catch (err) {
+        console.error('Error al obtener productos por género:', err);
+        return [];
+    }
+}
+
+// Función para extraer productos de manera recursiva
+// function extractProducts(category) {
+//     if (category.categories) {
+//         // Si hay subcategorías, combina los productos recursivamente
+//         return category.categories.flatMap((subcat) => extractProducts(subcat));
+//     }
+//     // Si no hay subcategorías, retorna el producto actual
+//     return [category];
+// }
+export function filterCategories(gender){
+    return async function(dispatch){
+        try{
+                const products =  getProductsByGender(gender)
+                dispatch({
+                    type: 'GET_PRODUCTS_BY_GENDER',
+                    payload:products
+                })
+        }
+            
         catch(err){
-            console.log("Error, algo salio mal", err)
+            console.log("Error al traer productos por genero", err)
+            dispatch({
+                type: 'GET_PRODUCTS_BY_GENDER',
+                payload:`Error al obtener productos para género: ${gender}`
+            })
         }
     }
 }
