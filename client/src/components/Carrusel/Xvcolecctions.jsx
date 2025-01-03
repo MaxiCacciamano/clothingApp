@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
-import { getWomen } from '../../redux/action';
+import { filterCategories, getWomen } from '../../redux/action';
 import { Card } from '../Card';
+
+import more from '../../../public/IMG/more.png'
 
 import style from '../../design/newwek.module.css'
 
@@ -10,9 +12,10 @@ import { Link } from 'react-router-dom';
 
 export const Xvcolecctions = () => {
     const dispatch = useDispatch()
-    const all = useSelector(state=>state.women)
+    const allProd = useSelector(state=>state.women)
+
     useEffect(()=>{
-        dispatch(getWomen('your-category-api-endpoint'))
+        dispatch(getWomen())
     },[])
     const settings = {
         dots: false, // Mostrar puntos de navegación
@@ -30,7 +33,7 @@ export const Xvcolecctions = () => {
         <Slider {...settings}>
         {/* hasta aca */}
        {
-        !all || all.length === 0 ? <h1>Loading</h1>: all.map((e, index)=>(
+        !allProd || allProd.length === 0 ? <h1>Loading</h1>: allProd.map((e, index)=>(
           <div key={`${e.name}-${index}`} className={style.slicknew}>
                     <img src= {e.image}  alt={`Imagen: ${e.name}`}/>
                 <Link to="/details" style={{position:'absolute',bottom:'70px'}}>
@@ -48,11 +51,11 @@ export const Xvcolecctions = () => {
         ))
        }
         </Slider>
-        <div>
-        <a>
+        <div className={style.more}>
+        <a href='#'>
           More
         </a>
-          
+        <img src={more}/> 
         </div>
         </div>
     </div>

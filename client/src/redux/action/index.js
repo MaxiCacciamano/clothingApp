@@ -8,7 +8,8 @@ function extractProducts(category){
         subcategory: subcategory.name,
         amount: product?.amount,
         currency: product?.currency,
-        image: product?.image
+        image: product?.image,
+        gender: category
      }))
     )
 }
@@ -29,13 +30,18 @@ export async function products(){
             if(category){
                 // Find 'Clothing' subcategory and extract products
                 const subcategory = category.categories?.find(
-                (subcategory) => subcategory.name === 'Clothing'
+                    (subcategory) => subcategory.name === 'Clothing'
                 );
-                return extractProducts(subcategory)
+                const subGenderCategory = subcategory.categories?.map((category)=>(
+                    category.categories?.find((prod)=>(
+                        prod.name
+                    ))
+                ))
+                console.log(subGenderCategory,"dd")
+                return extractProducts(subGenderCategory)
             }
             return [];
         })
-        console.log(allProducts, "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")
         //filtrar 
         return allProducts   
 }
@@ -156,49 +162,38 @@ export function getShoes(){
     }
 
 }
-export async function getProductsByGender(gender) {
+async function getProductsByGender() {
     try {
-        const response = await axios.get('../../../clothing.json');
-        const clothing = response.data.catalog.clothing;
-
-        // Encuentra la categoría principal basada en el género
-        const category = clothing.categories.find(
-            (cat) => cat.name.toLowerCase() === gender.toLowerCase()
-        );
-
+      const response = await axios.get('../../../clothing.json');
+      const clothing = response.data.catalog.clothing;
+  
+      const categories = ['Women', 'Men', 'Girls', 'Boys'];
+      const allProducts = categories.flatMap((categoryName) => {
+        const category = clothing.categories.find((cat) => cat.name === categoryName);
         if (category) {
-            // Encuentra la subcategoría "Clothing"
-            const subcategory = category.categories.find(
-                (subcat) => subcat.name === 'Clothing'
-            );
-
-            if (subcategory) {
-                // Extrae y retorna los productos
-                return extractProducts(subcategory);
-            }
+          const clothingSubcategory = category.categories?.find((subCat) => subCat.name === 'Clothing');
+          return clothingSubcategory?.categories?.map((product) => ({
+            name: product?.name || 'Unknown',
+            amount: product?.amount || 0,
+            currency: product?.currency || 'USD',
+            image: product?.image || '',
+            subcategory: clothingSubcategory.name,
+          }));
         }
-
-        // Retorna un array vacío si no se encuentran productos
         return [];
+      });
+  
+      return allProducts;
     } catch (err) {
-        console.error('Error al obtener productos por género:', err);
-        return [];
+      console.error('Error al obtener productos por género:', err);
+      return [];
     }
-}
+  }
 
-// Función para extraer productos de manera recursiva
-// function extractProducts(category) {
-//     if (category.categories) {
-//         // Si hay subcategorías, combina los productos recursivamente
-//         return category.categories.flatMap((subcat) => extractProducts(subcat));
-//     }
-//     // Si no hay subcategorías, retorna el producto actual
-//     return [category];
-// }
-export function filterCategories(gender){
+export function filterCategories(){
     return async function(dispatch){
         try{
-                const products =  getProductsByGender(gender)
+                const products = await getProductsByGender()
                 dispatch({
                     type: 'GET_PRODUCTS_BY_GENDER',
                     payload:products
@@ -209,7 +204,7 @@ export function filterCategories(gender){
             console.log("Error al traer productos por genero", err)
             dispatch({
                 type: 'GET_PRODUCTS_BY_GENDER',
-                payload:`Error al obtener productos para género: ${gender}`
+                payload:`Error al obtener productos para género`
             })
         }
     }
