@@ -161,20 +161,31 @@ export async function getProductsByGender(gender) {
         const response = await axios.get('../../../clothing.json');
         const clothing = response.data.catalog.clothing;
 
+        // console.log("clottthh.", clothing)
         // Encuentra la categoría principal basada en el género
-        const category = clothing.categories.find(
+        const category = clothing.categories.filter(
             (cat) => cat.name.toLowerCase() === gender.toLowerCase()
         );
 
         if (category) {
             // Encuentra la subcategoría "Clothing"
-            const subcategory = category.categories.find(
+            const subcategory = category[0].categories.filter(
                 (subcat) => subcat.name === 'Clothing'
             );
+            
+            const products = subcategory[0].categories.flatMap(prod=>prod.categories)
+            
+            
+            
+            const producCaracteristics = products.map(d=>({
+                name: d.name,
+                image: d.image
+            }))
+            console.log(producCaracteristics, "subcattttttttttttttttttttttttttttttttttttttttttt")
 
-            if (subcategory) {
+            if (producCaracteristics) {
                 // Extrae y retorna los productos
-                return extractProducts(subcategory);
+                return producCaracteristics;
             }
         }
 
@@ -203,7 +214,8 @@ export function filterCategories(gender){
                     type: 'GET_PRODUCTS_BY_GENDER',
                     payload:products
                 })
-        }
+                console.log("momomopmomom",getProductsByGender(gender))
+            }
             
         catch(err){
             console.log("Error al traer productos por genero", err)

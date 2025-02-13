@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { filterCategories, getShoes } from '../redux/action'
 
@@ -7,6 +7,9 @@ import style from '../design/filterCat.module.css'
 export const Filtercategory = () => {
     const dispatch = useDispatch()
 
+    useEffect(()=>{
+      dispatch()
+    })
     const [sum, setSum] = useState(true)
 
     function handleFilterCategory(gender){
@@ -16,7 +19,7 @@ export const Filtercategory = () => {
         dispatch(filterCategories(gender))
     }
 
-    const categories = ["(ALL)", "Men", "Women", "Kids"]
+    const categories = ["All", "Men", "Women", "Kids"]
   return (
     <div>
       <div style={{display:'flex', flexDirection:'row'}} className={style.filterClothing}>
