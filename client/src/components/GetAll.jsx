@@ -66,7 +66,7 @@ export const GetAll = () => {
 
     <div className={style.products}>
        </div>
-       <Xvcolecctions/>
+       {/* <Xvcolecctions/> */}
        <h1>Shoes</h1>
        <Shoes />
 
