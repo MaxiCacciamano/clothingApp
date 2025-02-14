@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterCategories, getShoes } from '../redux/action';
+=======
+import React, { useEffect, useState } from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import { filterCategories, getShoes } from '../redux/action'
+>>>>>>> a7a5032cf0d96f1f133e35275c0a595b6b1b7bb3
 
 import style from '../design/filterCat.module.css';
 import { Card } from './Card';
@@ -10,6 +16,13 @@ export const Filtercategory = () => {
   const {gender} = useSelector(state => state);
   const [filter, setFilter] = useState(true);
 
+<<<<<<< HEAD
+=======
+    useEffect(()=>{
+      dispatch()
+    })
+    const [sum, setSum] = useState(true)
+>>>>>>> a7a5032cf0d96f1f133e35275c0a595b6b1b7bb3
 
   useEffect(() => {
     if (gender) {
@@ -34,7 +47,6 @@ export const Filtercategory = () => {
       ))
     // }
   }
-
   return (
     <div>
       <div style={{ display: 'flex', flexDirection: 'row' }} className={style.filterClothing}>

@@ -1,7 +1,7 @@
 const initialState ={
     women:[],
     productsearch:[],
-    getall:[],
+    gender:[],
     accessories:[],
     shoes:[],
     gender:[],
@@ -45,10 +45,14 @@ export default function rootReducer(state = initialState, action){
                 error: action.payload
             }
         }
-        case 'GET_PRODUCTS_BY_GENDER':{
+        case 'GET_GENDERS':{
             return{
                 ...state,
+<<<<<<< HEAD
                 gender: action.payload
+=======
+                allCategory: action.payload
+>>>>>>> a7a5032cf0d96f1f133e35275c0a595b6b1b7bb3
             }
         }
 

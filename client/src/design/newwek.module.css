@@ -77,9 +77,24 @@
   }
 
   .customArrow.prev{
-    left: 49%;
+    left: 50%;
   }
 
   .customArrow.next{
-   right: 52%;
+   right: 51%;
+  }
+
+  .more{
+    display: grid;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .more a{
+    color: #8A8A8A;
+  }
+
+  .more img{
+    margin: 0 auto;
+    width: 40%;
   }
