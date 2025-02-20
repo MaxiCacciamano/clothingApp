@@ -158,70 +158,73 @@ export function getShoes(){
 }
 export async function getProductsByGender(gender) {
     try {
-        const response = await axios.get('../../../clothing.json');
-        const clothing = response.data.catalog.clothing;
-
-        // console.log("clottthh.", clothing)
-        // Encuentra la categoría principal basada en el género
-        const category = clothing.categories.filter(
-            (cat) => cat.name.toLowerCase() === gender.toLowerCase()
+      const response = await axios.get('../../../clothing.json');
+      const clothing = response.data.catalog.clothing;
+  
+      // Encuentra la categoría principal basada en el género
+      const category = clothing.categories.find(
+        (cat) => cat.name.toLowerCase() === gender.toLowerCase()
+      );
+  
+      if (category) {
+        // Encuentra la subcategoría "Clothing"
+        const subcategory = category.categories.find(
+          (subcat) => subcat.name === 'Clothing'
         );
-
-        if (category) {
-            // Encuentra la subcategoría "Clothing"
-            const subcategory = category[0].categories.filter(
-                (subcat) => subcat.name === 'Clothing'
-            );
-            
-            const products = subcategory[0].categories.flatMap(prod=>prod.categories)
-            const producCaracteristics = products.map(d=>({
-                name: d.name,
-                image: d.image
-            }))
-            console.log(producCaracteristics, "subcattttttttttttttttttttttttttttttttttttttttttt")
-            
-            if (producCaracteristics) {
-                return producCaracteristics;
-            }
-                // Extrae y retorna los productos
-            }
-        // Retorna un array vacío si no se encuentran productos
-        return [];
+  
+        // Aplanamos todas las subcategorías (Dresses, Tops, Pants, etc.)
+        const products = subcategory.categories.flatMap((prodCategory) => prodCategory.categories);
         
+        // Extraemos los productos y les asignamos las características necesarias
+        const productDetails = products.map((product) => ({
+            name: product.name,
+              image: product.image,
+              amount: product.amount,
+              size: product.size,
+              currency: product.currency,
+              category: gender, // Aquí añadimos el género para que pueda ser filtrado
+        }));
+        
+        console.log(productDetails, "categories productsdddddddddddddddddddddddddddddddddddddddddddddddd")
+        return productDetails;
+      }
+  
+      return [];  // Retorna un array vacío si no se encuentra la categoría
     } catch (err) {
-        console.error('Error al obtener productos por género:', err);
-        return [];
+      console.error('Error al obtener productos por género:', err);
+      return [];
     }
-}
-
-// Función para extraer productos de manera recursiva
-// function extractProducts(category) {
-//     if (category.categories) {
-//         // Si hay subcategorías, combina los productos recursivamente
-//         return category.categories.flatMap((subcat) => extractProducts(subcat));
-//     }
-//     // Si no hay subcategorías, retorna el producto actual
-//     return [category];
-// }
-export function filterCategories(gender){
-    return async function(dispatch){
-        try{
-                const products =  getProductsByGender(gender)
-                dispatch({
-                    type: 'GET_PRODUCTS_BY_GENDER',
-                    payload:products
-                })
-        }
-            
-        catch(err){
-            console.log("Error al traer productos por genero", err)
+  }
+  
+  
+  export function filterCategories(payload) {
+    return async function(dispatch) {
+      try {
+        if(payload === "ALL"){
+            const allProducts = await products();
             dispatch({
                 type: 'GET_PRODUCTS_BY_GENDER',
-                payload:`Error al obtener productos para género: ${gender}`
+                payload:allProducts
             })
+        }else{
+            // Esperar que getProductsByGender retorne los productos correctamente
+            const products = await getProductsByGender(payload);
+            console.log("Productos despachados:", products);
+            dispatch({
+              type: 'GET_PRODUCTS_BY_GENDER',
+              payload: products
+            });
         }
+      } catch (err) {
+        console.log("Error al traer productos por género", err);
+        dispatch({
+          type: 'GET_PRODUCTS_BY_GENDER',
+          payload: []  // Retornar vacío en caso de error
+        });
+      }
     }
-}
+  }
+  
 
 export function searchByName(payload){
     return async function(dispatch){
