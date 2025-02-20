@@ -47,9 +47,7 @@ export const Filtercategory = () => {
             gender.map((product, index) => (
           <Card key={index} name={product.name} image={product.image} category={product.category} />
           ))
-          ):(allCategory.map((product, index)=>(
-            <Card key={index} name={product.name} image={product.image} category={product.category} />
-          )))
+          ):(<p>No se encontraron productos</p>)
           }
       </div>
     </div>
