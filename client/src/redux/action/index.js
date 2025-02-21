@@ -35,7 +35,7 @@ export async function products(){
             }
             return [];
         })
-        console.log(allProducts, "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")
+        // console.log(allProducts, "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")
         //filtrar 
         return allProducts   
 }
@@ -98,7 +98,7 @@ export function getAccesorios(){
                 type:'GET_ACCESSORIES',
                 payload: accessoriProd || []
             })
-            console.log(accessoriProd,'ddddddd')
+            // console.log(accessoriProd,'ddddddd')
         })
         .catch(err=>console.log("Error al traer accesorios", err))
     }

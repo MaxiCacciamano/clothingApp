@@ -43,11 +43,11 @@ export const SearchName = () => {
         <button type='submit' onClick={e=>handleSearch(e)}>
          <img src= {lupa} />
         </button>
-        <input
+        {/* <input
         placeholder="Search"
         value={name}
         onChange={e=>handleInput(e)}
-        />
+        /> */}
 
 
       </form>
