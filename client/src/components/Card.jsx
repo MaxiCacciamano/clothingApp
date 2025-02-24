@@ -13,8 +13,10 @@ export const Card = ({name, amount, currency, image}) => {
   return (
     <div className={style.product}>
       <img src={image} />
+      <div className={style.subprod}>
       <h2> {name} </h2>
       <h2>{currency} {amount}</h2>
+      </div>
     </div>
   )
 }

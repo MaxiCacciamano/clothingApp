@@ -18,7 +18,7 @@ export default function rootReducer(state = initialState, action){
                 ...state,
                 women: action.payload,
                 allCategory: action.payload,
-                // gender:action.payload
+                gender:action.payload
             }
         }
         case 'GET_ACCESSORIES':{
