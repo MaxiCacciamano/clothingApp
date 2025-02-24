@@ -24,7 +24,7 @@
 .subprod{
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    /* width: 90%; */
 }
 
 .shoes{

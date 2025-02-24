@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterCategories,getWomen ,getShoes } from '../redux/action';
+import more from '../../public/IMG/Vector1.png';
 
 import style from '../design/filterCat.module.css';
 import { Card } from './Card';
+import { Link } from 'react-router-dom';
 
 export const Filtercategory = () => {
   const dispatch = useDispatch();
@@ -42,7 +44,7 @@ export const Filtercategory = () => {
         </ul>
       </div>
       <div className={style.filterGender}>
-{            console.log(gender, "genero filter")}
+{/* {            console.log(gender, "genero filter")} */}
         {
           gender.length > 0 ? (
             gender.map((product, index) => (
@@ -50,6 +52,12 @@ export const Filtercategory = () => {
           ))
           ):(<p>No se encontraron productos</p>)
         }
+      </div>
+      <div className={style.more}>
+      <Link to="/category">
+        <p>More</p>
+        <img src= {more} />
+      </Link>
       </div>
     </div>
   );
