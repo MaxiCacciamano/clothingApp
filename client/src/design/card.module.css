@@ -1,26 +1,43 @@
 .product{
+    display: flex;
     margin: 10px;
-    background-color:darkslategrey;
+    /* background-color:darkslategrey; */
     border-radius: 5px;
-    padding: 15px;
+    /* padding: 15px; */
     text-align: left;
+    justify-content: center;
+    flex-direction: column;
 }
 .product img{
-    width: 30%;
+    /* margin: 0 auto; */
+    width: 80%;
+    
 }
 .product h2{
     line-height: 1;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Beatrice Deck Trial Medium";
 }
 
+
+.subprod{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
 
 .shoes{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     text-align: left;
 }
+
 .container h1{
     font-size: 30px;
     line-height: 1;
     text-align: left;
     margin-left: 25px;
+    font-weight: bold;
+    font-family: "Beatrice Deck Trial Medium";
 }

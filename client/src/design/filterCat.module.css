@@ -24,6 +24,26 @@
     font-weight: 500;
 }
 
+.filter{
+    display: flex;
+    border-radius: 5px;
+    /* text-align: left; */
+    flex-direction: column;
+}
+.filterGender{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+    .filterGender img{
+        width: 366px;
+        height: 376px;
+        /* margin: 0 auto; */
+        /* width: 80%; */
+    
+    
+}
+
 .filterClothing li:hover{
     color: #000000;
 }

@@ -8,11 +8,11 @@ import { Card } from './Card';
 export const Filtercategory = () => {
   const dispatch = useDispatch();
   const gender = useSelector(state => state.gender);
-  const allCategory = (state => state.allCategory);
+  const allCategory = useSelector(state => state.allCategory);
   const [filter, setFilter] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  const categories = ["ALL", "Men", "Women", "Kids"];
+  const categories = ["ALL", "Men", "Women", "Girls", "Boys"];
 
   
   // Función para manejar el clic en las categorías
@@ -30,7 +30,7 @@ export const Filtercategory = () => {
   }
 
   return (
-    <div>
+    <div className={style.filter}>
       <div style={{ display: 'flex', flexDirection: 'row' }} className={style.filterClothing}>
         {/* Lista de categorías */}
         <ul>
@@ -41,14 +41,15 @@ export const Filtercategory = () => {
           ))}
         </ul>
       </div>
-      <div className={style.productList}>
+      <div className={style.filterGender}>
+{            console.log(gender, "genero filter")}
         {
           gender.length > 0 ? (
             gender.map((product, index) => (
-          <Card key={index} name={product.name} image={product.image} category={product.category} />
+          <Card key={index} name={product.name} image={product.image} category={product.category}  amount={"$ "+product.amount} />
           ))
           ):(<p>No se encontraron productos</p>)
-          }
+        }
       </div>
     </div>
   );
