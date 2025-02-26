@@ -31,7 +31,8 @@ export const Filtercategory = () => {
 
   return (
     <div className={style.filter}>
-      <div style={{ display: 'flex', flexDirection: 'row' }} className={style.filterClothing}>
+      <div style={{ display: 'flex', justifyContent:'space-between' }} className={style.filterClothing}>
+      <div>
         {/* Lista de categorías */}
         <ul>
           {categories.map((category, index) => (
@@ -44,6 +45,12 @@ export const Filtercategory = () => {
             </li>
           ))}
         </ul>
+      </div>
+        <div className={style.filterlesstomore} style={{alignContent:'center'}}> 
+         {/*Filtros */}
+         <a href='#'> Filters</a>
+         <a href='#'> Sorts</a>
+        </div>
       </div>
       <div className={style.filterGender}>
 {/* {            console.log(gender, "genero filter")} */}
