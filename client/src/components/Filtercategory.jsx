@@ -19,16 +19,12 @@ export const Filtercategory = () => {
   
   // Función para manejar el clic en las categorías
   function handleFilterCategory(category) {
-    if(category === "ALL" || category === "Kids"){
-      dispatch(getWomen('your-category-api-endpoint')) 
+    // if(category === "ALL" || category === "Kids"){
+      // category.slice(0,3)
+      // dispatch(filterCategories(category))
+    // }else{
       dispatch(filterCategories(category))
-      // setFilteredProducts([])
-    // //   //   const filtered = gender.filter(prod => prod.category === category)
-    }else{
-      //   dispatch(filterCategories(filtered));
-      //   setFilteredProducts(filtered) 
-      dispatch(filterCategories(category))
-    }
+    // }
   }
 
   return (
