@@ -24,6 +24,9 @@
     font-weight: 500;
 }
 
+.filterItemActive{
+    color: black !important;
+}
 .filter{
     display: flex;
     border-radius: 5px;

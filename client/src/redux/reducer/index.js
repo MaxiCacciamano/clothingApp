@@ -5,6 +5,7 @@ const initialState ={
     accessories:[],
     shoes:[],
     gender:[],
+    selectedGender:null,
     allCategory:[],
     error:[]
 }
@@ -18,7 +19,7 @@ export default function rootReducer(state = initialState, action){
                 ...state,
                 women: action.payload,
                 // allCategory: action.payload,
-                gender:action.payload.slice(0,3)
+                gender:action.payload
             }
         }
         case 'GET_ACCESSORIES':{
@@ -49,7 +50,8 @@ export default function rootReducer(state = initialState, action){
         case 'GET_PRODUCTS_BY_GENDER':{
             return{
                 ...state,
-                gender: action.payload
+                gender: action.payload,
+                selectedGender: action.selectedGender //Guardamos el genero seleccionado
             }
         }
 
