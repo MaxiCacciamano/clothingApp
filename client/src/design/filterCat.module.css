@@ -24,6 +24,9 @@
     font-weight: 500;
 }
 
+.filterItemActive{
+    color: black !important;
+}
 .filter{
     display: flex;
     border-radius: 5px;
@@ -34,11 +37,14 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         text-align: left;
+
+        /* margin: 0 auto; */
+        width: 90%;
     }
     .filterGender img{
-        width: 366px;
+        width: 405px;
         height: 376px;
-        /* margin: 0 auto; */
+        margin: 0 auto;
         /* width: 80%; */
     
     
@@ -46,4 +52,16 @@
 
 .filterClothing li:hover{
     color: #000000;
+}
+.more p:hover{
+    color: #000000;
+}
+
+.more p{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #8A8A8A;
+}
+.more img{
+margin: 0;
 }

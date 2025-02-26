@@ -184,8 +184,9 @@ export async function getProductsByGender(gender) {
               currency: product.currency,
               category: gender, // Aquí añadimos el género para que pueda ser filtrado
         }));
+
         
-        console.log(productDetails, "categories productsdddddddddddddddddddddddddddddddddddddddddddddddd")
+        
         return productDetails;
       }
   
@@ -201,7 +202,7 @@ export async function getProductsByGender(gender) {
     return async function(dispatch) {
       try {
         if(payload === "ALL"){
-            const allProducts = await products();
+            const allProducts = await products()
             dispatch({
                 type: 'GET_PRODUCTS_BY_GENDER',
                 payload:allProducts
@@ -209,10 +210,11 @@ export async function getProductsByGender(gender) {
         }else{
             // Esperar que getProductsByGender retorne los productos correctamente
             const products = await getProductsByGender(payload);
-            console.log("Productos despachados:", products);
+            // console.log("Productos despachados:", products);
             dispatch({
               type: 'GET_PRODUCTS_BY_GENDER',
-              payload: products
+              payload: products,
+              selectedGender:payload //Enviamos el genero seleccionado
             });
         }
       } catch (err) {

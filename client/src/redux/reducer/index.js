@@ -4,7 +4,8 @@ const initialState ={
     getall:[],
     accessories:[],
     shoes:[],
-    gender:{},
+    gender:[],
+    selectedGender:null,
     allCategory:[],
     error:[]
 }
@@ -17,7 +18,7 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state,
                 women: action.payload,
-                allCategory: action.payload,
+                // allCategory: action.payload,
                 gender:action.payload
             }
         }
@@ -49,7 +50,8 @@ export default function rootReducer(state = initialState, action){
         case 'GET_PRODUCTS_BY_GENDER':{
             return{
                 ...state,
-                gender: action.payload
+                gender: action.payload,
+                selectedGender: action.selectedGender //Guardamos el genero seleccionado
             }
         }
 
