@@ -11,8 +11,7 @@ export const Filtercategory = () => {
   const dispatch = useDispatch();
   const gender = useSelector(state => state.gender);
   // const selectedGender = useSelector(state => state.selectedGender)
-  const [filter, setFilter] = useState(true);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filterIsOpen, setFilterIsOpen] = useState(false);
   const [selectedGender, setSelectedGender] = useState('');
 
   const categories = ["ALL", "Men", "Women", "Girls", "Boys"];
@@ -31,7 +30,8 @@ export const Filtercategory = () => {
 
   return (
     <div className={style.filter}>
-      <div style={{ display: 'flex', flexDirection: 'row' }} className={style.filterClothing}>
+      <div style={{ display: 'flex', justifyContent:'space-between' }} className={style.filterClothing}>
+      <div>
         {/* Lista de categorías */}
         <ul>
           {categories.map((category, index) => (
@@ -44,6 +44,30 @@ export const Filtercategory = () => {
             </li>
           ))}
         </ul>
+      </div>
+        <div className={style.filterlesstomore} style={{alignContent:'center', cursor:'pointer'}}> 
+        
+         {/*Filtros */}
+
+         <a>
+          Filters {filterIsOpen ? "(-)":"(+)"}  
+        </a>
+        {filterIsOpen && (
+        <div className="filters">
+          {/* Aquí van tus filtros */}
+          <label>
+            <input type="checkbox" /> Filter 1
+          </label>
+          <label>
+            <input type="checkbox" /> Filter 2
+          </label>
+          <label>
+            <input type="checkbox" /> Filter 3
+          </label>
+        </div>
+      )}
+         <a href='#'> Sorts</a>
+        </div>
       </div>
       <div className={style.filterGender}>
 {/* {            console.log(gender, "genero filter")} */}
