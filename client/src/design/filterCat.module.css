@@ -33,6 +33,23 @@
     /* text-align: left; */
     flex-direction: column;
 }
+
+.filterlesstomore{
+    display: flex;
+}
+
+.filterlesstomore a{
+    color: #000000;
+}
+
+.labelFilter{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #8A8A8A;
+    font-weight: 400;
+    cursor: pointer;
+}
 .filterlesstomore a{
     margin-left: 100px;
 }

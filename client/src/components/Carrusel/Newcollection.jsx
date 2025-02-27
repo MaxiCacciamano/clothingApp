@@ -3,6 +3,7 @@ import Slider from 'react-slick'; // Importamos el componente Slider de react-sl
 
 import arrow from '../../../public/IMG/Arrow.png'
 import carrusel from '../../../public/IMG/Vector.png'
+import carruselLeft from '../../../public/IMG/Vectorleft.png';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getAccesorios, getShoes } from '../../redux/action';
@@ -30,6 +31,7 @@ export const Newcollection = () => {
           display: "block",
           // background: "black",
           borderRadius: "50%",
+          color:'black'
           // left: "-120px", // Ajusta la posición horizontal,
           // bottom:'-50',
           // zIndex: 1, // Asegúrate de que la flecha esté visible
@@ -37,7 +39,7 @@ export const Newcollection = () => {
         }}
         onClick={onClick}
         >
-          <img src={carrusel}/>
+          <img src={carruselLeft}/>
         </div>
       )
     }
@@ -56,7 +58,7 @@ export const Newcollection = () => {
     }
     // Configuración básica para el carrusel
     const settings = {
-      dots: true, // Mostrar puntos de navegación
+
       infinite: true, // Carrusel infinito
       speed: 500, // Velocidad de transición en milisegundos
       slidesToShow: 2, // Cuántas imágenes se mostrarán a la vez

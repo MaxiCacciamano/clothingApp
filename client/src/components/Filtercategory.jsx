@@ -12,6 +12,7 @@ export const Filtercategory = () => {
   const gender = useSelector(state => state.gender);
   // const selectedGender = useSelector(state => state.selectedGender)
   const [filterIsOpen, setFilterIsOpen] = useState(false);
+  const [sortsIsOpen, setSortsIsOpen] = useState(false);
   const [selectedGender, setSelectedGender] = useState('');
 
   const categories = ["ALL", "Men", "Women", "Girls", "Boys"];
@@ -26,6 +27,14 @@ export const Filtercategory = () => {
       setSelectedGender(category);
       dispatch(filterCategories(category))
     // }
+  }
+
+  function FilterIsOpen (){
+    setFilterIsOpen(!filterIsOpen)
+  }
+
+  function SortsIsOpen (){
+    setSortsIsOpen(!sortsIsOpen)
   }
 
   return (
@@ -49,11 +58,10 @@ export const Filtercategory = () => {
         
          {/*Filtros */}
 
-         <a>
+         <a onClick={FilterIsOpen}>
           Filters {filterIsOpen ? "(-)":"(+)"}  
-        </a>
         {filterIsOpen && (
-        <div className="filters">
+        <div className={style.labelFilter}>
           {/* Aquí van tus filtros */}
           <label>
             <input type="checkbox" /> Filter 1
@@ -66,7 +74,22 @@ export const Filtercategory = () => {
           </label>
         </div>
       )}
-         <a href='#'> Sorts</a>
+      </a>
+         <a onClick={SortsIsOpen}>
+           Sorts {sortsIsOpen ? "(-)":"(+)"}
+           {
+            sortsIsOpen && (
+              <div className={style.labelFilter}>
+                  <label>
+                   <input type="checkbox" /> Less to more
+                 </label>
+                 <label>
+                   <input type="checkbox" /> More to less
+                 </label>  
+              </div>
+            )
+           }
+          </a>
         </div>
       </div>
       <div className={style.filterGender}>
