@@ -79,19 +79,13 @@ export const Filtercategory = () => {
       </a>
          <a onClick={SortsIsOpen}>
            Sorts {sortsIsOpen ? "(-)":"(+)"}
-           <Lesstomore/>
-           {/* {
+           {
             sortsIsOpen && (
-              <div className={style.labelFilter}>
-                  <label>
-                   <input type="checkbox" /> Less to more
-                 </label>
-                 <label>
-                   <input type="checkbox" /> More to less
-                 </label>  
+              <div>
+                   <Lesstomore/>
               </div>
             )
-           } */}
+           }
           </a>
         </div>
       </div>
