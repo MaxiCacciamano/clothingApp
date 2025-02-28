@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import {lesstomoreClothing} from '../redux/action/index.js';
 
+import style from '../design/filterCat.module.css';
 export const Lesstomore = () => {
     const dispatch = useDispatch();
     const [order, setOrder] = useState("")
@@ -12,12 +13,17 @@ export const Lesstomore = () => {
         dispatch(lesstomoreClothing(e.target.value))
     }
   return (
-    <div>
-        <select onChange={e=>handlelesstomore(e)}>
-            <option defaultValue={ "all"} hidden></option>
-            <option value="asc">Ascendente</option>
-            <option value="desc">Descendente</option>
-        </select>
+    <div className={style.labelFilter} onChange={e=>handlelesstomore(e)}>
+          <label>
+            <input type="checkbox"  defaultValue={ "all"} hidden/>
+          </label>
+          <label>
+            <input type="checkbox"  value="asc"/> Filter 2
+          </label>
+          <label>
+            <input type="checkbox" value="desc" /> Filter 3
+          </label>
     </div>
+
   )
 }
