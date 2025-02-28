@@ -7,6 +7,8 @@ import style from '../design/filterCat.module.css';
 import { Card } from './Card';
 import { Link } from 'react-router-dom';
 
+import {Lesstomore} from '../Filters/Lesstomore';
+
 export const Filtercategory = () => {
   const dispatch = useDispatch();
   const gender = useSelector(state => state.gender);
@@ -77,7 +79,8 @@ export const Filtercategory = () => {
       </a>
          <a onClick={SortsIsOpen}>
            Sorts {sortsIsOpen ? "(-)":"(+)"}
-           {
+           <Lesstomore/>
+           {/* {
             sortsIsOpen && (
               <div className={style.labelFilter}>
                   <label>
@@ -88,7 +91,7 @@ export const Filtercategory = () => {
                  </label>  
               </div>
             )
-           }
+           } */}
           </a>
         </div>
       </div>

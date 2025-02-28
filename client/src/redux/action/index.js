@@ -253,11 +253,11 @@ export function searchByName(payload){
     }
 }
 
-export function filterClothing(payload){
+export function lesstomoreClothing(payload){
     return function(dispatch){
         try{
             dispatch({
-                type:'FILTER_CATEGORY_CLOTHING',
+                type:'FILTER_CATEGORY_LESS_TO_MORE',
                 payload
             })
         }
