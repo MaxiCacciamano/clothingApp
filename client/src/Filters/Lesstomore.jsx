@@ -18,12 +18,11 @@ export const Lesstomore = () => {
             <input type="checkbox"  defaultValue={ "all"} hidden/>
           </label>
           <label>
-            <input type="checkbox"  value="asc"/> Filter 2
+            <input type="checkbox"  value="asc"/> Less
           </label>
           <label>
-            <input type="checkbox" value="desc" /> Filter 3
+            <input type="checkbox" value="desc" /> More
           </label>
     </div>
-
   )
 }

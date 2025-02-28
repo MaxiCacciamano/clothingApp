@@ -57,17 +57,17 @@ export default function rootReducer(state = initialState, action){
 
         case 'FILTER_CATEGORY_LESS_TO_MORE':{
             const orderlesstomore = action.payload === "asc"?state.gender.sort(function(a,b){
-                if(a.name > b.name)return 1
-                if(a.name < b.name)return -1
+                if(a.amount > b.amount)return 1
+                if(a.amount < b.amount)return -1
                 return 0 
             }):
             action.payload === "desc"?state.gender.sort(function(a,b){
-                if(a.name < b.name)return 1
-                if(a.name > b.name)return -1
+                if(a.amount < b.amount)return 1
+                if(a.amount > b.amount)return -1
                 return 0
             }):
             state.gender.sort(function(a,b){
-                if(a.name > b.name) return 1
+                if(a.amount > b.amount) return 1
             })
             console.log(orderlesstomore)
             return{
