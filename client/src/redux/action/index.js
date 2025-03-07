@@ -186,7 +186,7 @@ export async function getProductsByGender(gender) {
         }));
 
         
-        
+        console.log(productDetails,"ddd")
         return productDetails;
       }
   
@@ -263,6 +263,20 @@ export function lesstomoreClothing(payload){
         }
         catch(err){
             console.log(err, 'error en el getById')
+        }
+    }
+}
+
+export function filtersize(payload){
+    return function(dispatch){
+        try{
+            dispatch({
+                type:'FILTER_SIZE',
+                payload
+            })
+        }
+        catch(err){
+            console.log(err,"Error al traer filtros por talle")
         }
     }
 }

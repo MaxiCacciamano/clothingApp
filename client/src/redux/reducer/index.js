@@ -76,6 +76,12 @@ export default function rootReducer(state = initialState, action){
                 
             }
         }
+        case 'FILTER_SIZE':{
+            const size = { s:"S", m:"M", l:"L", xl:"XL", xxl:"XXL"}
+            return{
+
+            }
+        }
             default:
             return state
     }
