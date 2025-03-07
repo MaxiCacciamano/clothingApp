@@ -9,7 +9,7 @@ export const FilterSeccion = () => {
             <input type="checkbox" /> Filter 1
           </label>
           <label>
-            <input type="checkbox"> Filter 2 </input>
+            <input type="checkbox"/> Filter 2
           </label>
           <label>
             <input type="checkbox" /> Filter 3
