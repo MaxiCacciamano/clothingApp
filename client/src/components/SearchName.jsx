@@ -5,6 +5,7 @@ import { products, searchByName } from '../redux/action'
 import lupa from '../../public/IMG/Lupa.png'
 
 import style from '../design/nav.module.css'
+import { Link } from 'react-router-dom'
 
 export const SearchName = () => {
   const dispatch = useDispatch()
@@ -56,21 +57,23 @@ export const SearchName = () => {
           showRsult  &&(
             <div>
             {
-
-          searchProduct? (
-            <div >
-              {/* <h3>Producto encontrado</h3> */}
-                <h3>{searchProduct.map((n)=>(n.name))}</h3>
-                
-            </div>
-          ): error ? (
-                <div>
-                    <p style={{ color: 'red' }}>{error}</p>
-                </div>
-          ):(
-            <p>Introduce un nombre para buscar un producto.</p> 
-          )
-            }
+        searchProduct.length > 0 ? (  // Verifica que haya productos en searchProduct
+          <div>
+            <h3>Productos encontrados:</h3>
+            <ul>
+              {searchProduct.map((n) => (
+                <li key={n.id}><Link to="./details">{n.name}</Link></li>  // Muestra cada nombre de producto en un <li>
+              ))}
+            </ul>
+          </div>
+        ) : error ? (
+          <div>
+            <p style={{ color: 'red' }}>{error}</p>
+          </div>
+        ) : (
+          <p>Introduce un nombre para buscar un producto.</p>
+        )
+      }
 
             </div>
           )
