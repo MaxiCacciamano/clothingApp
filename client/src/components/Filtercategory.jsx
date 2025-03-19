@@ -8,6 +8,7 @@ import { Card } from './Card';
 import { Link } from 'react-router-dom';
 
 import {Lesstomore} from '../Filters/Lesstomore';
+import { FilterSeccion } from '../Filters/FilterSeccion';
 
 export const Filtercategory = () => {
   const dispatch = useDispatch();
@@ -65,15 +66,7 @@ export const Filtercategory = () => {
         {filterIsOpen && (
         <div className={style.labelFilter}>
           {/* Aquí van tus filtros */}
-          <label>
-            <input type="checkbox" /> Filter 1
-          </label>
-          <label>
-            <input type="checkbox" /> Filter 2
-          </label>
-          <label>
-            <input type="checkbox" /> Filter 3
-          </label>
+          <FilterSeccion />
         </div>
       )}
       </a>
