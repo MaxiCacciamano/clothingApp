@@ -5,12 +5,13 @@ import { products, searchByName } from '../redux/action'
 import lupa from '../../public/IMG/Lupa.png'
 
 import style from '../design/nav.module.css'
+import { Link } from 'react-router-dom'
 
 export const SearchName = () => {
   const dispatch = useDispatch()
   const searchProduct = useSelector(state=>state.women)
   const error = useSelector(state => state.error);
-  const [name, setName] = useState(null)
+  const [name, setName] = useState("")
   const [showRsult, setShowresult] = useState(false)
 
 
@@ -21,6 +22,7 @@ export const SearchName = () => {
       return; // Salir si el input está vacío
       }
     dispatch(searchByName(name))
+    setShowresult(true);
   }
 
   function handleInput(e){
@@ -40,35 +42,38 @@ export const SearchName = () => {
   return (
     <div className= {style.search} >
       <form onSubmit={(e)=>handleSubmit(e)}>
-        <button type='submit' onClick={e=>handleSearch(e)}>
-         <img src= {lupa} />
-        </button>
-        {/* <input
+        <input
         placeholder="Search"
         value={name}
-        onChange={e=>handleInput(e)}
-        /> */}
+        onChange={e=>handleInput(e)}  
+        />
 
+        <button type='submit'>
+         <img src= {lupa} />
+        </button> 
 
       </form>
         {
           showRsult  &&(
             <div>
             {
-
-          searchProduct ? (
-            <div>
-              {/* <h3>Producto encontrado</h3> */}
-              <p>{searchProduct.name} </p>
-            </div>
-          ): error ? (
-                <div>
-                    <p style={{ color: 'red' }}>{error}</p>
-                </div>
-          ):(
-            <p>Introduce un nombre para buscar un producto.</p> 
-          )
-            }
+        searchProduct.length > 0 ? (  // Verifica que haya productos en searchProduct
+          <div>
+            <h3>Productos encontrados:</h3>
+            <ul>
+              {searchProduct.map((n) => (
+                <li key={n.id}><Link to="./details">{n.name}</Link></li>  // Muestra cada nombre de producto en un <li>
+              ))}
+            </ul>
+          </div>
+        ) : error ? (
+          <div>
+            <p style={{ color: 'red' }}>{error}</p>
+          </div>
+        ) : (
+          <p>Introduce un nombre para buscar un producto.</p>
+        )
+      }
 
             </div>
           )

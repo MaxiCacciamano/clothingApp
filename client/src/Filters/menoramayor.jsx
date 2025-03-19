@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Details = () => {
+export const menoramayor = () => {
   return (
     <div>
-      
+        
     </div>
   )
 }

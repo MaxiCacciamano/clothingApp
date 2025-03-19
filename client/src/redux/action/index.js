@@ -13,7 +13,7 @@ function extractProducts(category){
     )
 }
 
-export async function products(){
+export async function products(){   
     try{
         const res = await axios.get('../../../clothing.json')
 
@@ -35,7 +35,7 @@ export async function products(){
             }
             return [];
         })
-        // console.log(allProducts, "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")
+        console.log(allProducts, "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")
         //filtrar 
         return allProducts   
 }
@@ -186,7 +186,7 @@ export async function getProductsByGender(gender) {
         }));
 
         
-        
+        console.log(productDetails,"ddd")
         return productDetails;
       }
   
@@ -233,22 +233,18 @@ export function searchByName(payload){
         try{
             const productss = await products()
             const productName = productss.filter(n => n.name.toLowerCase().includes(payload.toLowerCase())) 
-            console.log(productName,"sss")
-
-            if (!productName) {
+            
+            if (productName.length === 0) {
                 throw new Error(`No se encontró un producto con el nombre: ${payload}`);
             }
             dispatch({
                 type:'GET_BY_NAME',
                 payload: productName
             })
+            console.log(productName,"sss")
         }
         catch(err){
             console.log(err, "Error, algo salio mal en seach by name")
-            dispatch({
-                type:'GET_BY_NAME_ERROR',
-                payload: err.message
-            })
         }
     }
 }
@@ -263,6 +259,20 @@ export function lesstomoreClothing(payload){
         }
         catch(err){
             console.log(err, 'error en el getById')
+        }
+    }
+}
+
+export function filtersize(payload){
+    return function(dispatch){
+        try{
+            dispatch({
+                type:'FILTER_SIZE',
+                payload
+            })
+        }
+        catch(err){
+            console.log(err,"Error al traer filtros por talle")
         }
     }
 }
