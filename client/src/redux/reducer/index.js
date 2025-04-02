@@ -4,6 +4,7 @@ const initialState ={
     getall:[],
     accessories:[],
     shoes:[],
+    allGender:[],
     gender:[],
     name:[],
     selectedGender:null,
@@ -20,7 +21,8 @@ export default function rootReducer(state = initialState, action){
                 ...state,
                 women: action.payload,
                 // allCategory: action.payload,
-                gender:action.payload
+                gender:action.payload,
+                allGender:action.payload
             }
         }
         case 'GET_ACCESSORIES':{
@@ -52,12 +54,24 @@ export default function rootReducer(state = initialState, action){
             return{
                 ...state,
                 gender: action.payload,
+                allGender:action.payload, //copia original con todos los talles
                 selectedGender: action.selectedGender //Guardamos el genero seleccionado
             }
         }
 
+        case 'FILTER_SIZE_M':{
+            // const size = action.payload === "M"
+            // const allsizem= state.allGender.filter((item)=>item.size === action.payload)
+            return{
+                ...state,
+                gender:state.allGender.filter((item)=>item.size === action.payload),
+                
+            }
+        }
+
         case 'FILTER_CATEGORY_LESS_TO_MORE':{
-            const orderlesstomore = action.payload === "asc"?state.gender.sort(function(a,b){
+            const orderlesstomore = 
+            action.payload === "asc"?state.gender.sort(function(a,b){
                 if(a.amount > b.amount)return 1
                 if(a.amount < b.amount)return -1
                 return 0 
@@ -75,14 +89,6 @@ export default function rootReducer(state = initialState, action){
                 ...state,
                 gender: orderlesstomore
                 
-            }
-        }
-        case 'FILTER_SIZE':{
-            // const size = { s:"S", m:"M", l:"L", xl:"XL", xxl:"XXL"}
-            const filtsize = action.paylaod ? state.gender.filter((p)=>p.size === action.paylaod) : state.gender
-            return{
-                ...state,
-                gender: filtsize
             }
         }
             default:

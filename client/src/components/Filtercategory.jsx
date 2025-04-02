@@ -65,7 +65,6 @@ export const Filtercategory = () => {
           Filters {filterIsOpen ? "(-)":"(+)"}  
         {filterIsOpen && (
         <div className={style.labelFilter}>
-          {/* Aquí van tus filtros */}
           <FilterSeccion />
         </div>
       )}
@@ -83,7 +82,7 @@ export const Filtercategory = () => {
         </div>
       </div>
       <div className={style.filterGender}>
-{/* {            console.log(gender, "genero filter")} */}
+      {/* {            console.log(gender, "genero filter")} */}
         {
           gender.length > 0 ? (
             gender.slice(0,3).map((product, index) => (

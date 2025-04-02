@@ -18,6 +18,16 @@
 
     line-height: 1;
 }
+.info .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info .title p{
+    margin: 50px;
+}
+
 
 
 .slicknew{

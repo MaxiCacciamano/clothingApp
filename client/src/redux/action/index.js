@@ -8,7 +8,8 @@ function extractProducts(category){
         subcategory: subcategory.name,
         amount: product?.amount,
         currency: product?.currency,
-        image: product?.image
+        image: product?.image,
+        size: product?.size
      }))
     )
 }
@@ -267,7 +268,7 @@ export function filtersize(payload){
     return function(dispatch){
         try{
             dispatch({
-                type:'FILTER_SIZE',
+                type:'FILTER_SIZE_M',
                 payload
             })
         }

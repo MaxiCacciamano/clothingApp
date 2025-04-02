@@ -40,7 +40,7 @@ export const Xvcolecctions = () => {
                      </button>
                 </Link>
                      <div className={style.info}>
-                     <p>{} </p>
+                     <p> </p>
                       <p><span> {e.name} </span></p>
                       <p> {e.currency} {e.amount} </p>
                      </div>

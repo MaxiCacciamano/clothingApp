@@ -59,10 +59,11 @@
         text-align: left;
 
         /* margin: 0 auto; */
-        width: 90%;
+        /* width: 90%; */
     }
     .filterGender img{
-        width: 405px;
+        /* width: 405px; */
+        width: 100%;
         height: 376px;
         margin: 0 auto;
         /* width: 80%; */
