@@ -21,9 +21,9 @@ export const FilterSeccion = () => {
           <label >
             <input onChange={e=>handledispatchsize(e)} type="checkbox" value="S"/> Size S
           </label>
-          {/* <label >
-            <input  type="checkbox" value="M" /> Size M
-          </label> */}
+          <label >
+            <input onChange={e=>handledispatchsize(e)}  type="checkbox" value="M" /> Size M
+          </label>
     </div>
   )
 }

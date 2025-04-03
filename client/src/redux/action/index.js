@@ -151,7 +151,7 @@ export function getShoes(){
                 payload: allShoes,
             });
 
-            // console.log(allShoes, "Filtered Shoes by Category");
+            console.log(allShoes, "Filtered Shoes by Category");
         })
         .catch(err=>console.log(err, "Error al traer Shoe"))
     }

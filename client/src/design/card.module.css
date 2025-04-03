@@ -29,8 +29,16 @@
 
 .shoes{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     text-align: left;
+}
+
+.shoes h2{
+    justify-content: space-around;
+}
+.shoes img{
+    margin: 0 auto;
+    width: 80%;
 }
 
 .container h1{

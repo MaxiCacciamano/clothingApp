@@ -61,7 +61,6 @@ export default function rootReducer(state = initialState, action){
 
         case 'FILTER_SIZE_M':{
             // const size = action.payload === "M"
-            // const allsizem= state.allGender.filter((item)=>item.size === action.payload)
             return{
                 ...state,
                 gender:state.allGender.filter((item)=>item.size === action.payload),

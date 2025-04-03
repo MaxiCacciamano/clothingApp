@@ -5,7 +5,7 @@ import { Card } from '../components/Card'
 import style from '../design/filterCat.module.css';
 
 export const Category = () => {
-  const gender = useSelector(state => state.gender)
+  const gender = useSelector(state => state.allGender)
   return (
     <div className={style.filterGender}>
       {

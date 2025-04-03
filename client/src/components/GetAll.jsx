@@ -4,12 +4,14 @@ import { Card } from './Card'
 import { getWomen, getShoes } from '../redux/action'
 
 import style from '../design/getall.module.css'
+
 import { Shoes } from './Shoes'
 import { SearchName } from './SearchName'
 import { Filters } from './Filters'
 import { Newcollection } from './Carrusel/Newcollection'
 import { Newwek } from './Carrusel/Newwek'
 import { Xvcolecctions } from './Carrusel/Xvcolecctions'
+import { Design } from './Design'
 
 export const GetAll = () => {
     const dispatch = useDispatch()
@@ -63,12 +65,13 @@ export const GetAll = () => {
         </div>
     <Filters />
 
-
-    <div className={style.products}>
-       </div>
        {/* <Xvcolecctions/> */}
        <h1>Shoes</h1>
        <Shoes />
+
+       <div>
+        <Design/>
+       </div>
 
     </div>
   )
