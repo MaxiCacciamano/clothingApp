@@ -2,6 +2,10 @@ import React from 'react'
 
 import style from '../design/design.module.css';
 
+import rectangle16 from '../../public/IMG/Rectangle 16.png';
+import rectangle14 from '../../public/IMG/Rectangle 14.png';
+import rectangle17 from '../../public/IMG/Rectangle 17 (1).png';
+
 export const Design = () => {
   return (
     <div className={style.design}>
@@ -10,6 +14,11 @@ export const Design = () => {
             fashion that transcends trends and stands the test of time each design
             is meticulously crafted, ensuring the highest quelity exquisite finish
         </p>
+        <div style={{marginTop:'70px'}}>
+          <img style={{marginBottom:'100px'}} src= {rectangle16} />
+          <img style={{position:'relative',top:'100px', margin:'50px'}} src= {rectangle14} />
+          <img style={{marginBottom:'100px'}} src= {rectangle17} />
+        </div>
     </div>
   )
 }
