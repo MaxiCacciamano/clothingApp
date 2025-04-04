@@ -1,0 +1,22 @@
+.design{
+    margin-top: 150px;
+}
+
+.design h2{
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+    /* font-family: beatrice trial; */
+}
+
+.design p{
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: 2px;
+    justify-content: center;
+    width: 630px;
+    margin: 0 auto;
+}

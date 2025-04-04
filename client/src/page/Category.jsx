@@ -11,7 +11,7 @@ export const Category = () => {
       {
         gender.length > 0 ?(
           gender.map((c, index)=>(
-            <Card key={index}  name={c.name} image={c.image} category={c.category} amount={"$"+c.amount}/>
+            <Card  key={index}  name={c.name} image={c.image} category={c.category} amount={"$"+c.amount}/>
           ))
         ):(<p>No se encontraron productos</p>)
       }
