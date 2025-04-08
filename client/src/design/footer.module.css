@@ -1,3 +1,9 @@
+.footer{
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
 
 .menu{
     list-style: none;
@@ -5,7 +11,23 @@
     color: #000000;
 }
 
+.submenuFooterGeneral{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .submenu{
  list-style: none;   
  color: #000000;
 }
+
+.titles{
+    display: flex;
+    flex-direction: column;
+}
+
+.titles h1{
+    margin: 0;
+}
+

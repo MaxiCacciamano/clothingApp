@@ -8,8 +8,8 @@ export const Footer = () => {
   const [openLenguage, setLeguage] = useState(false) 
 
   return (
-    <div>
-        <ul>
+    <div className={style.footer} style={{backgroundColor:'#F5F5F5'}}>
+        <ul className={style.submenuFooterGeneral}>
             <li className={style.menu} onClick={()=>setOpenInfo(!openInfo)}>Info
             {
               openInfo &&(
@@ -33,9 +33,11 @@ export const Footer = () => {
             }
             </li>
         </ul>
+        <div className={style.titles}>
         <p>Technologies</p>
         <h1>XIV QR</h1>
         <p>Near-field communication</p>
+        </div>
     </div>
   )
 }

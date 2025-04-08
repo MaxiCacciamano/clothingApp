@@ -31,7 +31,7 @@ export const GetAll = () => {
 
     // console.log(all)
   return (
-    <div>
+    <div className={style.conteinGetall}>
     {/* {
           showRsult  &&(
             <div>
@@ -72,9 +72,6 @@ export const GetAll = () => {
 
        <div>
         <Design/>
-       </div>
-       <div>
-        <Footer/>
        </div>
 
     </div>

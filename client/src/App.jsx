@@ -10,6 +10,7 @@ import './App.css'
 import {Home} from './page/Home'
 import { Details } from './page/Details';
 import { Category } from './page/Category';
+import { Footer } from './components/Footer';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
        <Route path="/details" element={<Details/>}/>
        <Route path='/category' element={<Category/>}/>
      </Routes>
+      <Footer/>
     </div>
   )
 }
