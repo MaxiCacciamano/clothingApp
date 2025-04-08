@@ -12,6 +12,7 @@ import { Newcollection } from './Carrusel/Newcollection'
 import { Newwek } from './Carrusel/Newwek'
 import { Xvcolecctions } from './Carrusel/Xvcolecctions'
 import { Design } from './Design'
+import { Footer } from './Footer'
 
 export const GetAll = () => {
     const dispatch = useDispatch()
@@ -71,6 +72,9 @@ export const GetAll = () => {
 
        <div>
         <Design/>
+       </div>
+       <div>
+        <Footer/>
        </div>
 
     </div>

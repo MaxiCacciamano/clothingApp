@@ -1,0 +1,11 @@
+
+.menu{
+    list-style: none;
+    cursor: pointer;
+    color: #000000;
+}
+
+.submenu{
+ list-style: none;   
+ color: #000000;
+}
