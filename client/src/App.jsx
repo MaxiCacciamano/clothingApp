@@ -17,11 +17,13 @@ function App() {
   
   return (
     <div>
+      <div className='componentes'>
      <Routes>
        <Route path="/" element={<Home/>}/>
        <Route path="/details" element={<Details/>}/>
        <Route path='/category' element={<Category/>}/>
      </Routes>
+      </div>
       <Footer/>
     </div>
   )

@@ -16,7 +16,7 @@ export const Design = () => {
         </p>
         <div style={{marginTop:'70px'}}>
           <img style={{marginBottom:'100px'}} src= {rectangle16} />
-          <img style={{position:'relative',top:'100px', margin:'50px'}} src= {rectangle14} />
+          <img style={{margin:'20px'}} src= {rectangle14} />
           <img style={{marginBottom:'100px'}} src= {rectangle17} />
         </div>
     </div>

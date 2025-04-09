@@ -38,6 +38,7 @@ export const Footer = () => {
         <h1>XIV QR</h1>
         <p>Near-field communication</p>
         </div>
+
     </div>
   )
 }
