@@ -1,8 +1,6 @@
 .footer{
-
     text-align: center;
-    /* display: flex; */
-    
+    padding: 50px;
 }
 
 .menu{
@@ -14,13 +12,21 @@
 .submenuFooterGeneral{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     float: left;
+    align-items: flex-start;
 }
 
 .submenu{
  list-style: none;   
  color: #000000;
+ justify-content: left;
+ text-align: left;
+}
+
+.submenu li{
+    text-align: left;
+    
 }
 
 .titles{
@@ -30,6 +36,7 @@
 
 .titles h1{
     margin: 0;
+    font-size: 80px;
 }
 
 .titles p{
