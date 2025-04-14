@@ -1,5 +1,5 @@
 .footer{
-    text-align: center;
+    /* text-align: center; */
     padding: 50px;
 }
 
@@ -7,6 +7,7 @@
     list-style: none;
     cursor: pointer;
     color: #000000;
+    margin-top: 40px;
 }
 
 .submenuFooterGeneral{
@@ -31,15 +32,21 @@
 
 .titles{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
 .titles h1{
     margin: 0;
     font-size: 80px;
+    font-weight: 900;
+    line-height: 0.8;
 }
 
 .titles p{
     margin: 0;
 }
 
+.titles2{
+    display: flex;
+    flex-direction: column;
+}

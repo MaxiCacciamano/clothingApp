@@ -37,9 +37,11 @@ export const Footer = () => {
 
         </div>
         <div className={style.titles}>
-        <p>Technologies</p>
-        <h1>XIV<br/> QR</h1>
-        <p>Near-field communication</p>
+          <div className={style.titles2}>
+            <p>Technologies</p>
+            <h1>VR <br/> XIV<br/> QR</h1>
+          </div>
+            <p style={{marginTop:'120px', marginLeft:'10px'}}>Near-field communication</p>
         </div>
 
     </div>
