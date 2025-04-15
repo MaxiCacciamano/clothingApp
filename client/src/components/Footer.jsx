@@ -11,7 +11,7 @@ export const Footer = () => {
     <div className={style.footer} style={{backgroundColor:'#F5F5F5'}}>
         <div>
         <ul className={style.submenuFooterGeneral}>
-            <li className={style.menu} onClick={()=>setOpenInfo(!openInfo)}>Info
+            <li className={style.menu} onClick={()=>setOpenInfo(!openInfo)}><p>Info</p>
             {
               openInfo &&(
               <ul className={style.submenu}>
@@ -22,7 +22,7 @@ export const Footer = () => {
               )
             }
             </li>
-            <li className={style.menu} onClick={()=>setLeguage(!openLenguage)}>Lenguages
+            <li className={style.menu} onClick={()=>setLeguage(!openLenguage)}><p>Lenguages</p>
             {
               openLenguage && (
             <ul  className={style.submenu}>
@@ -41,7 +41,7 @@ export const Footer = () => {
             <p>Technologies</p>
             <h1>VR <br/> XIV<br/> QR</h1>
           </div>
-            <p style={{marginTop:'120px', marginLeft:'10px'}}>Near-field communication</p>
+            <p style={{marginTop:'120px', marginLeft:'20px'}}>Near-field communication</p>
         </div>
 
     </div>
