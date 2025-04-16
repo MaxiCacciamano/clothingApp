@@ -5,6 +5,7 @@ import style from '../design/design.module.css';
 import rectangle16 from '../../public/IMG/Rectangle 16.png';
 import rectangle14 from '../../public/IMG/Rectangle 14.png';
 import rectangle17 from '../../public/IMG/Rectangle 17 (1).png';
+import rectangle18 from '../../public/IMG/Rectangle 15.png'
 
 export const Design = () => {
   return (
@@ -15,10 +16,10 @@ export const Design = () => {
             is meticulously crafted, ensuring the highest quelity exquisite finish
         </p>
         <div className= {style.carrusel}  style={{marginTop:'70px'}}>
-          <img style={{marginBottom:'100px'}} src= {rectangle16} />
-          <img style={{margin:'20px'}} src= {rectangle14} />
-          <img style={{marginBottom:'100px'}} src= {rectangle17} />
-          <img style={{margin:'20px'}} src= {rectangle14} />
+          <img className={style.imgNormal} src= {rectangle16} />
+          <img className={style.imgSubida} src= {rectangle14} />
+          <img className={style.imgNormal} src= {rectangle17} />
+          <img className={style.imgSubida} src= {rectangle14} />
         </div>
     </div>
   )
