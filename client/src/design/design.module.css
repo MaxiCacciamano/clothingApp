@@ -2,6 +2,13 @@
     margin-top: 150px;
     clear: both;
     margin-bottom: 200px;
+    
+}
+
+
+.carrusel{
+    display: grid;
+    grid-template-columns: repeat(4, 0.3fr);
 }
 
 .design h2{

@@ -14,10 +14,11 @@ export const Design = () => {
             fashion that transcends trends and stands the test of time each design
             is meticulously crafted, ensuring the highest quelity exquisite finish
         </p>
-        <div style={{marginTop:'70px'}}>
+        <div className= {style.carrusel}  style={{marginTop:'70px'}}>
           <img style={{marginBottom:'100px'}} src= {rectangle16} />
           <img style={{margin:'20px'}} src= {rectangle14} />
           <img style={{marginBottom:'100px'}} src= {rectangle17} />
+          <img style={{margin:'20px'}} src= {rectangle14} />
         </div>
     </div>
   )
