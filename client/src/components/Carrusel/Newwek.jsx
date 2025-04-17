@@ -11,6 +11,7 @@ export const Newwek = () => {
     const dispatch = useDispatch()
     const accessories = useSelector(state=>state.accessories)
 
+
     useEffect(()=>{
         dispatch(getAccesorios())
     },[])
@@ -41,9 +42,11 @@ export const Newwek = () => {
   return (
     <div className={style.newwek}>
     <div className={style.info}>
-    
+        <div className={style.title}>
         <h1>New<br/> this week</h1>
-        <a href='#' style={{marginTop:'auto', marginRight:'10px'}}>See more</a>
+        <h2>({accessories.length})</h2>
+        </div>
+        <a href='#' style={{marginTop:'auto', marginRight:'10px', color:'grey', fontWeight:'450'}}>See more</a>
     </div>
         <div className={style.carrusel}>
         <Slider {...settings}>

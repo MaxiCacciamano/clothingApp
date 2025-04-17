@@ -1,0 +1,57 @@
+.design{
+    margin-top: 150px;
+    clear: both;
+    margin-bottom: 200px;
+    
+}
+
+
+.carrusel{
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carrusel img {
+    flex: 0 0 auto;
+    width: 70vw; /* Tamaño fluido */
+    max-width: 280px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    scroll-snap-align: start;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+  .imgNormal {
+    margin-bottom: 100px;
+  }
+  
+  .imgSubida {
+    position: relative;
+    top: 30px;
+    margin: 20px 0;
+  }
+
+.design h2{
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+    /* font-family: beatrice trial; */
+}
+
+.design p{
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: 2px;
+    justify-content: center;
+    width: 630px;
+    margin: 0 auto;
+}

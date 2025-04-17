@@ -14,7 +14,7 @@ export const Filtersize = () => {
     }
   return (
     <div>
-            <div className={style.labelFilter}>
+            <div className={style.labelFilter} >
           <label>
             <input type="checkbox" /> Filter 1
           </label>
