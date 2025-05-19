@@ -1,8 +1,42 @@
 .design{
-    margin-top: 150px;
+    margin-top: 100px;
     clear: both;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+    
 }
+
+
+.carrusel{
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+}
+
+.carrusel img {
+    flex: 0 0 auto;
+    width: 70vw; /* Tamaño fluido */
+    max-width: 280px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    scroll-snap-align: start;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+  .imgNormal {
+    margin-bottom: 100px;
+  }
+  
+  .imgSubida {
+    position: relative;
+    top: 30px;
+    margin: 20px 0;
+  }
 
 .design h2{
     font-size: 48px;
@@ -16,9 +50,11 @@
 
 .design p{
     font-weight: 100;
-    font-size: 18px;
+    font-size: 1.125rem;
+    letter-spacing: 0.125rem;
     letter-spacing: 2px;
     justify-content: center;
-    width: 630px;
+    width: 40vw; /*vw para que se base en el ancho de la pantalla, no el alto */
+    padding: 1rem;
     margin: 0 auto;
 }

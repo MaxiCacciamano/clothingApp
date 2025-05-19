@@ -67,8 +67,8 @@ export const GetAll = () => {
     <Filters />
 
        {/* <Xvcolecctions/> */}
-       <h1>Shoes</h1>
-       <Shoes />
+       {/* <h1>Shoes</h1>
+       <Shoes /> */}
 
        <div>
         <Design/>

@@ -1,6 +1,8 @@
 .footer{
     /* text-align: center; */
     padding: 50px;
+    width: 70%;
+    margin:0 auto;
 }
 
 .menu{
@@ -13,6 +15,8 @@
 .menu p{
     /* margin: 0; */
     margin-top: 10px;
+    color: #7b7a7a;
+    text-transform: uppercase;
 }
 
 .submenuFooterGeneral{
@@ -36,7 +40,8 @@
 
 .submenu li{
     text-align: left;
-    
+    text-transform: uppercase;
+    color: #464343;
 }
 
 .titles{
@@ -52,7 +57,7 @@
 }
 
 .titles p{
-    
+    color: #7b7a7a;
 }
 
 
@@ -69,4 +74,6 @@
 .titles2 p{
     margin: 0;
     margin-bottom: 20px;
+    color: #7b7a7a;
+    text-transform: uppercase;
 }
