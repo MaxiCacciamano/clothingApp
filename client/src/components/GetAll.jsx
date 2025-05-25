@@ -32,28 +32,6 @@ export const GetAll = () => {
     // console.log(all)
   return (
     <div className={style.conteinGetall}>
-    {/* {
-          showRsult  &&(
-            <div>
-            {
-
-          searchProduct ? (
-            <div>
-              <h3>Producto encontrado</h3>
-              <p>{searchProduct.name} </p>
-            </div>
-          ): error ? (
-                <div>
-                    <p style={{ color: 'red' }}>{error}</p>
-                </div>
-          ):(
-            <p>Introduce un nombre para buscar un producto.</p>
-          )
-            }
-
-            </div>
-          )
-        } */}
         <Newcollection />
         <Newwek/>
         <div className='titleXV'>
@@ -65,11 +43,6 @@ export const GetAll = () => {
            23-24</h1>
         </div>
     <Filters />
-
-       {/* <Xvcolecctions/> */}
-       {/* <h1>Shoes</h1>
-       <Shoes /> */}
-
        <div>
         <Design/>
        </div>

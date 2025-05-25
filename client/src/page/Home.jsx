@@ -6,7 +6,7 @@ import { Hamburgesa } from '../components/Hamburgesa'
 export const Home = () => {
   return (
     <div>
-      <Nav/>
+      {/* <Nav/> */}
       <GetAll/>
     </div>
   )

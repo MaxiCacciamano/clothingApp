@@ -32,10 +32,6 @@ export const Newcollection = () => {
           // background: "black",
           borderRadius: "50%",
           color:'black'
-          // left: "-120px", // Ajusta la posición horizontal,
-          // bottom:'-50',
-          // zIndex: 1, // Asegúrate de que la flecha esté visible
-          // position:'relative'
         }}
         onClick={onClick}
         >
@@ -69,7 +65,7 @@ export const Newcollection = () => {
     };
 
   return (
-    <div className={style.collection}>
+    // <div className={style.collection}>
     <div className={style.contenedor}>
      <div className={style.presentacion}>
       <h1>NEW<br/>COLLECTION</h1>
@@ -88,6 +84,6 @@ export const Newcollection = () => {
      </Slider>
      </div>
     </div>
-    </div>
+    // </div>
   )
 }
