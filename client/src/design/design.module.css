@@ -5,6 +5,12 @@
     
 }
 
+@media (max-width:600px){
+  .design{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
 
 .carrusel{
     display: flex;
@@ -16,8 +22,9 @@
     justify-content: center;
 }
 
+
 .carrusel img {
-    flex: 0 0 auto;
+  flex: 0 0 auto;
     width: 70vw; /* Tamaño fluido */
     max-width: 280px;
     height: auto;
@@ -27,7 +34,7 @@
     transition: all 0.3s ease-in-out;
   }
 
-
+  
   .imgNormal {
     margin-bottom: 100px;
   }
@@ -36,6 +43,19 @@
     position: relative;
     top: 30px;
     margin: 20px 0;
+  }
+  @media (max-width:600px){
+    .carrusel{
+      flex-direction: column;
+      align-items: center;
+    }
+    .imgNormal {
+      margin-bottom: 0px;
+    }
+    .imgSubida{
+      margin: 0px 0;
+      top: 0;
+    }
   }
 
 .design h2{
@@ -48,6 +68,12 @@
     /* font-family: beatrice trial; */
 }
 
+@media (max-width:600px){
+  .design h2{
+    font-size: 30px;
+  }
+}
+
 .design p{
     font-weight: 100;
     font-size: 1.125rem;
@@ -57,4 +83,10 @@
     width: 40vw; /*vw para que se base en el ancho de la pantalla, no el alto */
     padding: 1rem;
     margin: 0 auto;
+}
+
+@media (max-width:600px){
+  .design p{
+    width: auto;
+  }
 }

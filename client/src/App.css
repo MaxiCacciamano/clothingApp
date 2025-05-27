@@ -36,6 +36,13 @@ p{
   padding: 2rem;
   text-align: center;
 }
+
+  @media (max-width: 600px) {
+    .componentes{
+      padding: 1rem;
+    }
+  }
+
 /* .componentes{
   max-width: 1280px;
   margin: 0px auto;

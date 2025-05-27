@@ -4,12 +4,22 @@
     width: 70%;
     margin:0 auto;
 }
-
 .menu{
     list-style: none;
     cursor: pointer;
     color: #000000;
     margin-bottom: 40px;
+}
+@media (max-width:600px){
+    .footer{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 60px;
+        padding: 10px;
+    }
+    .menu{
+        margin-bottom: 0;
+    }
 }
 
 .menu p{

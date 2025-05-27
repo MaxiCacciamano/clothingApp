@@ -45,7 +45,6 @@ export const Newcollection = () => {
       return(
         <div
         className={className}
-        // style={{ ...style, display: "block", right: "10px",  }}
         onClick={onClick}
         >
           <img src={carrusel}/>

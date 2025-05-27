@@ -5,7 +5,8 @@
     line-height: 1;
     margin-bottom: 30px;
 }
-@media (max-width: 480px) {
+
+@media (max-width: 600px) {
     .filterClothing{
         flex-direction: column;
 }
@@ -22,6 +23,11 @@
     padding-left: 0;
 }
 
+@media (max-width: 600px){
+    .filterClothing ul{
+        gap: 2px;
+    }
+}
 .filterClothing li{
     margin-right: 30px;
     color: #8A8A8A;
@@ -42,6 +48,12 @@
     display: flex;
 }
 
+@media (max-width:600px){
+    .filterlesstomore{
+        margin-bottom:20px;
+    }
+}
+
 .filterlesstomore a{
     color: #000000;
 }
@@ -57,6 +69,13 @@
 .filterlesstomore a{
     margin-left: 100px;
 }
+
+@media (max-width: 600px){
+    .filterlesstomore a{
+        margin-right: 50px;
+        margin-left: 0;
+    }
+}
 .filterGender{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -65,7 +84,13 @@
         /* margin: 0 auto; */
         
     }
-    .filterGender img{
+
+@media (max-width: 600px){
+    .filterGender{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.filterGender img{
         /* width: 405px; */
         width: 100%;
         height: 376px;
