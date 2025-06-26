@@ -62,11 +62,6 @@
     height: 313px;
 }
 
-@media (max-width: 600px) {
-    .slicknew img{
-        height: 100%;
-    }
-}
 
 .info{
     display: flex;
@@ -80,6 +75,20 @@
     font-family: "Beatrice Deck Trial Medium";
 }
 
+@media (max-width: 600px) {
+    .slicknew img{
+        height: 100%;
+    }
+    .info{
+        flex-direction: column;
+    }
+    .info p{
+        margin: 0;
+    }
+    .buttonPlus{
+        visibility: hidden;
+    }
+}
 .carrusel{
     position: relative;
 }
@@ -103,3 +112,4 @@
   .customArrow.next{
    right: 52%;
   }
+

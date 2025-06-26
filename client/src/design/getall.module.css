@@ -88,7 +88,8 @@
   
   .carrusel {
     flex: 2;
-    max-width: 760px;
+    /* max-width: 760px; */
+    width: 50%;
   }
 
     @media (max-width: 600px) {
@@ -102,7 +103,6 @@
     display: flex;
     justify-content: right;
   }
-
   
   .slickcarousel img{
     width: 366px;
